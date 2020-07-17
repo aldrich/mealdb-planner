@@ -1,0 +1,34 @@
+PODS:
+  - ConsistencyManager (8.0.0)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - PINCache (2.3)
+  - RocketData (8.0.0):
+    - ConsistencyManager (~> 8.0.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - Kingfisher
+  - PINCache
+  - RocketData
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - ConsistencyManager
+    - Kingfisher
+    - PINCache
+    - RocketData
+    - SnapKit
+
+SPEC CHECKSUMS:
+  ConsistencyManager: 72b8d918dfb257171fe45e994b45e3f38f6708fe
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  RocketData: 33de68eddf0dd26f21e871cb2dc840244eb21968
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 95afb5d3ebf2bf70ff9ea1cd13ecb34436ab6ef4
+
+COCOAPODS: 1.9.3

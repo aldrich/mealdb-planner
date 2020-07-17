@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'MealDBApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for MealDBApp
+  pod 'Kingfisher'
+  pod 'RocketData'
+  pod 'PINCache'
+  pod 'SnapKit'
+
+  target 'MealDBAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'MealDBAppUITests' do
+    # Pods for testing
+  end
+
+end
