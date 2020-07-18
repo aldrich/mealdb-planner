@@ -19,7 +19,7 @@ class APIClientTests: XCTestCase {
 		session.nextData = Bundle(for: type(of: self))
 			.jsonData(named: "ingredients")
 		
-		let apiClient: APIClientProtocol = MealDBAPIClient(session: session)
+		let apiClient: APIClientProtocol = APIClient(session: session)
 		
 		var ingredients: [Ingredient]?
 		
@@ -42,7 +42,7 @@ class APIClientTests: XCTestCase {
 		session.nextData = Bundle(for: type(of: self))
 			.jsonData(named: "meal")
 		
-		let apiClient: APIClientProtocol = MealDBAPIClient(session: session)
+		let apiClient: APIClientProtocol = APIClient(session: session)
 		
 		var meal: Meal?
 		
@@ -66,7 +66,7 @@ class APIClientTests: XCTestCase {
 		session.nextData = Bundle(for: type(of: self))
 			.jsonData(named: "meals-by-ingredient")
 		
-		let apiClient: APIClientProtocol = MealDBAPIClient(session: session)
+		let apiClient: APIClientProtocol = APIClient(session: session)
 		
 		var meals: [Meal]?
 		

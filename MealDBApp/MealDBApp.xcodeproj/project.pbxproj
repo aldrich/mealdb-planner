@@ -11,7 +11,7 @@
 		7EC1DF162BB1F898C1DDB838 /* Pods_MealDBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AE8C879175B9460A109306 /* Pods_MealDBAppTests.framework */; };
 		BE2B38A840508FF2A5B939AD /* Pods_MealDBApp_MealDBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9B1B5E73D12DFC663094E0 /* Pods_MealDBApp_MealDBAppUITests.framework */; };
 		BE7AD7EA24C297E100C2FDA1 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7E924C297E100C2FDA1 /* Meal.swift */; };
-		BE7AD7ED24C2992600C2FDA1 /* MealDBAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7EC24C2992600C2FDA1 /* MealDBAPIClient.swift */; };
+		BE7AD7ED24C2992600C2FDA1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7EC24C2992600C2FDA1 /* APIClient.swift */; };
 		BE7AD7EF24C2994100C2FDA1 /* URLSession+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7EE24C2994100C2FDA1 /* URLSession+Mocking.swift */; };
 		BE7AD7F124C2996000C2FDA1 /* Data+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7F024C2996000C2FDA1 /* Data+Decoding.swift */; };
 		BE7AD7F324C29E0100C2FDA1 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7F224C29E0100C2FDA1 /* TestUtilities.swift */; };
@@ -19,6 +19,13 @@
 		BE7AD7F724C29F8800C2FDA1 /* json-data.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE7AD7F624C29F8800C2FDA1 /* json-data.bundle */; };
 		BE7AD7F924C2A05000C2FDA1 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7F824C2A05000C2FDA1 /* Ingredient.swift */; };
 		BE7AD7FB24C2A36700C2FDA1 /* MealDBAPIClient+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7FA24C2A36700C2FDA1 /* MealDBAPIClient+Decoding.swift */; };
+		BE7AD80224C2AB6B00C2FDA1 /* MealDBCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD80124C2AB6B00C2FDA1 /* MealDBCache.swift */; };
+		BE7AD80424C2AF1100C2FDA1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7FF24C2A61E00C2FDA1 /* Persistence.swift */; };
+		BE7AD80624C2B16400C2FDA1 /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD80524C2B16400C2FDA1 /* Cacheable.swift */; };
+		BE7AD80824C2B63600C2FDA1 /* Dictionary+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD80724C2B63600C2FDA1 /* Dictionary+Codable.swift */; };
+		BE7AD80A24C2BDDD00C2FDA1 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD80924C2BDDD00C2FDA1 /* Collections.swift */; };
+		BE7AD80C24C2C7E100C2FDA1 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD80B24C2C7E100C2FDA1 /* DataProvider.swift */; };
+		BE7AD80E24C2CBBD00C2FDA1 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD80D24C2CBBD00C2FDA1 /* DataProviderTests.swift */; };
 		BED5ADA924C1EFBE008338EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADA824C1EFBE008338EE /* AppDelegate.swift */; };
 		BED5ADAB24C1EFBE008338EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADAA24C1EFBE008338EE /* SceneDelegate.swift */; };
 		BED5ADAD24C1EFBE008338EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADAC24C1EFBE008338EE /* ViewController.swift */; };
@@ -26,7 +33,7 @@
 		BED5ADB324C1EFBE008338EE /* MealDBApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADB124C1EFBE008338EE /* MealDBApp.xcdatamodeld */; };
 		BED5ADB524C1EFC0008338EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED5ADB424C1EFC0008338EE /* Assets.xcassets */; };
 		BED5ADB824C1EFC0008338EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED5ADB624C1EFC0008338EE /* LaunchScreen.storyboard */; };
-		BED5ADC324C1EFC0008338EE /* MealDBAAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADC224C1EFC0008338EE /* MealDBAAPIClientTests.swift */; };
+		BED5ADC324C1EFC0008338EE /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADC224C1EFC0008338EE /* APIClientTests.swift */; };
 		BED5ADCE24C1EFC0008338EE /* MealDBAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADCD24C1EFC0008338EE /* MealDBAppUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +59,7 @@
 		739E1FE27FCBA65EF1A573E0 /* Pods-MealDBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDBApp.release.xcconfig"; path = "Target Support Files/Pods-MealDBApp/Pods-MealDBApp.release.xcconfig"; sourceTree = "<group>"; };
 		B1FE3F48FB5EB1B5857AE640 /* Pods-MealDBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDBAppTests.release.xcconfig"; path = "Target Support Files/Pods-MealDBAppTests/Pods-MealDBAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE7AD7E924C297E100C2FDA1 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
-		BE7AD7EC24C2992600C2FDA1 /* MealDBAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBAPIClient.swift; sourceTree = "<group>"; };
+		BE7AD7EC24C2992600C2FDA1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BE7AD7EE24C2994100C2FDA1 /* URLSession+Mocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Mocking.swift"; sourceTree = "<group>"; };
 		BE7AD7F024C2996000C2FDA1 /* Data+Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Decoding.swift"; sourceTree = "<group>"; };
 		BE7AD7F224C29E0100C2FDA1 /* TestUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
@@ -60,6 +67,13 @@
 		BE7AD7F624C29F8800C2FDA1 /* json-data.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "json-data.bundle"; sourceTree = "<group>"; };
 		BE7AD7F824C2A05000C2FDA1 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		BE7AD7FA24C2A36700C2FDA1 /* MealDBAPIClient+Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MealDBAPIClient+Decoding.swift"; sourceTree = "<group>"; };
+		BE7AD7FF24C2A61E00C2FDA1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		BE7AD80124C2AB6B00C2FDA1 /* MealDBCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBCache.swift; sourceTree = "<group>"; };
+		BE7AD80524C2B16400C2FDA1 /* Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
+		BE7AD80724C2B63600C2FDA1 /* Dictionary+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Codable.swift"; sourceTree = "<group>"; };
+		BE7AD80924C2BDDD00C2FDA1 /* Collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
+		BE7AD80B24C2C7E100C2FDA1 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		BE7AD80D24C2CBBD00C2FDA1 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
 		BED5ADA524C1EFBE008338EE /* MealDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED5ADA824C1EFBE008338EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED5ADAA24C1EFBE008338EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +84,7 @@
 		BED5ADB724C1EFC0008338EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BED5ADB924C1EFC0008338EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BED5ADBE24C1EFC0008338EE /* MealDBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealDBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BED5ADC224C1EFC0008338EE /* MealDBAAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBAAPIClientTests.swift; sourceTree = "<group>"; };
+		BED5ADC224C1EFC0008338EE /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		BED5ADC424C1EFC0008338EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BED5ADC924C1EFC0008338EE /* MealDBAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealDBAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED5ADCD24C1EFC0008338EE /* MealDBAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBAppUITests.swift; sourceTree = "<group>"; };
@@ -129,6 +143,8 @@
 			children = (
 				BE7AD7E924C297E100C2FDA1 /* Meal.swift */,
 				BE7AD7F824C2A05000C2FDA1 /* Ingredient.swift */,
+				BE7AD80924C2BDDD00C2FDA1 /* Collections.swift */,
+				BE7AD80B24C2C7E100C2FDA1 /* DataProvider.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,7 +152,7 @@
 		BE7AD7EB24C298E200C2FDA1 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				BE7AD7EC24C2992600C2FDA1 /* MealDBAPIClient.swift */,
+				BE7AD7EC24C2992600C2FDA1 /* APIClient.swift */,
 				BE7AD7FC24C2A36D00C2FDA1 /* Extras */,
 			);
 			path = Networking;
@@ -160,6 +176,25 @@
 				BE7AD7F424C29E4A00C2FDA1 /* MockObjects.swift */,
 			);
 			name = "Test Helpers";
+			sourceTree = "<group>";
+		};
+		BE7AD7FE24C2A5F400C2FDA1 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				BE7AD80324C2AD8000C2FDA1 /* Extras */,
+				BE7AD80124C2AB6B00C2FDA1 /* MealDBCache.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		BE7AD80324C2AD8000C2FDA1 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				BE7AD80524C2B16400C2FDA1 /* Cacheable.swift */,
+				BE7AD7FF24C2A61E00C2FDA1 /* Persistence.swift */,
+				BE7AD80724C2B63600C2FDA1 /* Dictionary+Codable.swift */,
+			);
+			path = Extras;
 			sourceTree = "<group>";
 		};
 		BED5AD9C24C1EFBE008338EE = {
@@ -187,6 +222,7 @@
 		BED5ADA724C1EFBE008338EE /* MealDBApp */ = {
 			isa = PBXGroup;
 			children = (
+				BE7AD7FE24C2A5F400C2FDA1 /* Storage */,
 				BE7AD7EB24C298E200C2FDA1 /* Networking */,
 				BE7AD7E824C297D500C2FDA1 /* Models */,
 				BED5ADA824C1EFBE008338EE /* AppDelegate.swift */,
@@ -204,7 +240,8 @@
 		BED5ADC124C1EFC0008338EE /* MealDBAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				BED5ADC224C1EFC0008338EE /* MealDBAAPIClientTests.swift */,
+				BED5ADC224C1EFC0008338EE /* APIClientTests.swift */,
+				BE7AD80D24C2CBBD00C2FDA1 /* DataProviderTests.swift */,
 				BE7AD7FD24C2A52500C2FDA1 /* Test Helpers */,
 				BED5ADC424C1EFC0008338EE /* Info.plist */,
 			);
@@ -472,14 +509,20 @@
 			files = (
 				BE7AD7F124C2996000C2FDA1 /* Data+Decoding.swift in Sources */,
 				BE7AD7EA24C297E100C2FDA1 /* Meal.swift in Sources */,
+				BE7AD80C24C2C7E100C2FDA1 /* DataProvider.swift in Sources */,
 				BE7AD7F924C2A05000C2FDA1 /* Ingredient.swift in Sources */,
 				BE7AD7FB24C2A36700C2FDA1 /* MealDBAPIClient+Decoding.swift in Sources */,
+				BE7AD80224C2AB6B00C2FDA1 /* MealDBCache.swift in Sources */,
 				BE7AD7EF24C2994100C2FDA1 /* URLSession+Mocking.swift in Sources */,
 				BED5ADB324C1EFBE008338EE /* MealDBApp.xcdatamodeld in Sources */,
 				BED5ADAD24C1EFBE008338EE /* ViewController.swift in Sources */,
-				BE7AD7ED24C2992600C2FDA1 /* MealDBAPIClient.swift in Sources */,
+				BE7AD7ED24C2992600C2FDA1 /* APIClient.swift in Sources */,
+				BE7AD80A24C2BDDD00C2FDA1 /* Collections.swift in Sources */,
+				BE7AD80424C2AF1100C2FDA1 /* Persistence.swift in Sources */,
 				BED5ADA924C1EFBE008338EE /* AppDelegate.swift in Sources */,
+				BE7AD80824C2B63600C2FDA1 /* Dictionary+Codable.swift in Sources */,
 				BED5ADAB24C1EFBE008338EE /* SceneDelegate.swift in Sources */,
+				BE7AD80624C2B16400C2FDA1 /* Cacheable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,9 +530,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7AD80E24C2CBBD00C2FDA1 /* DataProviderTests.swift in Sources */,
 				BE7AD7F324C29E0100C2FDA1 /* TestUtilities.swift in Sources */,
 				BE7AD7F524C29E4A00C2FDA1 /* MockObjects.swift in Sources */,
-				BED5ADC324C1EFC0008338EE /* MealDBAAPIClientTests.swift in Sources */,
+				BED5ADC324C1EFC0008338EE /* APIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

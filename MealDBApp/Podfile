@@ -7,7 +7,6 @@ target 'MealDBApp' do
 
   # Pods for MealDBApp
   pod 'Kingfisher'
-  pod 'RocketData'
   pod 'PINCache'
   pod 'SnapKit'
 

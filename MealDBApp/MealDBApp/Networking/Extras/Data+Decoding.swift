@@ -9,9 +9,6 @@
 import Foundation
 
 extension Data {
-	
-	// this simply uses a regular decoder with a custom dateformat and snakeCase
-	// key implementation
 	func decoded<T>(as type: T.Type) throws -> T? where T: Decodable {
 		let decoder = JSONDecoder()
 		return try decoder.decode(type.self, from: self)
@@ -39,8 +36,7 @@ extension DecodingError {
 			desc = String(format: "Value not found for %@ at [%@]", String(describing: type), ctx.path)
 		default:
 			break
-		}
-		
+		}		
 		return desc
 	}
 }

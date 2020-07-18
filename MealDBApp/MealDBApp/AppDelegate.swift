@@ -12,15 +12,14 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-	let api = MealDBAPIClient()
+	let dp: DataProviderProtocol = DataProvider()
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		
-		api.getIngredients { ingredients in
+
+		dp.getIngredients { (ingredients, isRemote) in
 			print()
 		}
-		
-		
+
 		return true
 	}
 

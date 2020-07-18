@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension MealDBAPIClient {
+extension APIClient {
 	// decode the response and pass back up any error message in a nice
 	// format
 	func decodeResponse<T>(data: Data?, error: Error?, to type: T.Type,

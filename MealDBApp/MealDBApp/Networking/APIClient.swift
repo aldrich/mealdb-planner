@@ -14,7 +14,7 @@ typealias IngredientsCompletion = ([Ingredient]) -> Void
 typealias MealCompletion = (Meal?) -> Void
 typealias MealsCompletion = ([Meal]) -> Void
 
-protocol APIClient {
+protocol APIClientProtocol {
 	
 	func getIngredients(completion: @escaping IngredientsCompletion)
 	
@@ -23,7 +23,7 @@ protocol APIClient {
 	func getMealsByIngredient(_ ingredient: String, completion: @escaping MealsCompletion)
 }
 
-class MealDBAPIClient: APIClient {
+class APIClient: APIClientProtocol {
 	
 	var session: URLSessionProtocol
 	
