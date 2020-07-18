@@ -12,10 +12,15 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+	let api = MealDBAPIClient()
+	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		
+		api.getIngredients { ingredients in
+			print()
+		}
+		
+		
 		return true
 	}
 
