@@ -9,7 +9,14 @@
 import Foundation
 import PINCache
 
-class Persistence {
+protocol PersistenceProtocol {
+	
+	func getObjectForKey<T: Cacheable>(_ key: String) -> T?
+	
+	func setObject<T: Cacheable>(_ object: T)
+}
+
+class Persistence: PersistenceProtocol {
 	
 	enum Constants {
 		static var pinCacheDiskAgeLimit = TimeInterval(60 * 60 * 24)

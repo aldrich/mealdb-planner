@@ -26,6 +26,7 @@
 		BE7AD80A24C2BDDD00C2FDA1 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD80924C2BDDD00C2FDA1 /* Collections.swift */; };
 		BE7AD80C24C2C7E100C2FDA1 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD80B24C2C7E100C2FDA1 /* DataProvider.swift */; };
 		BE7AD80E24C2CBBD00C2FDA1 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD80D24C2CBBD00C2FDA1 /* DataProviderTests.swift */; };
+		BE7AD81024C2DC7400C2FDA1 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD80F24C2DC7400C2FDA1 /* CacheTests.swift */; };
 		BED5ADA924C1EFBE008338EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADA824C1EFBE008338EE /* AppDelegate.swift */; };
 		BED5ADAB24C1EFBE008338EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADAA24C1EFBE008338EE /* SceneDelegate.swift */; };
 		BED5ADAD24C1EFBE008338EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADAC24C1EFBE008338EE /* ViewController.swift */; };
@@ -74,6 +75,7 @@
 		BE7AD80924C2BDDD00C2FDA1 /* Collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
 		BE7AD80B24C2C7E100C2FDA1 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		BE7AD80D24C2CBBD00C2FDA1 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
+		BE7AD80F24C2DC7400C2FDA1 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		BED5ADA524C1EFBE008338EE /* MealDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED5ADA824C1EFBE008338EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED5ADAA24C1EFBE008338EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			children = (
 				BED5ADC224C1EFC0008338EE /* APIClientTests.swift */,
 				BE7AD80D24C2CBBD00C2FDA1 /* DataProviderTests.swift */,
+				BE7AD80F24C2DC7400C2FDA1 /* CacheTests.swift */,
 				BE7AD7FD24C2A52500C2FDA1 /* Test Helpers */,
 				BED5ADC424C1EFC0008338EE /* Info.plist */,
 			);
@@ -534,6 +537,7 @@
 				BE7AD7F324C29E0100C2FDA1 /* TestUtilities.swift in Sources */,
 				BE7AD7F524C29E4A00C2FDA1 /* MockObjects.swift in Sources */,
 				BED5ADC324C1EFC0008338EE /* APIClientTests.swift in Sources */,
+				BE7AD81024C2DC7400C2FDA1 /* CacheTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

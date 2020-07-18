@@ -71,3 +71,17 @@ class MockCache: CacheProtocol {
 	func addIngredient(_ ingredient: Ingredient) {
 	}	
 }
+
+class MockPersistence: PersistenceProtocol {
+	
+	var dict: [String: Cacheable]?
+	
+	func getObjectForKey<T>(_ key: String) -> T? where T : Cacheable {
+		let ret = dict?[key]
+		return ret as? T
+	}
+	
+	func setObject<T>(_ object: T) where T : Cacheable {
+		dict?[object.key] = object
+	}
+}

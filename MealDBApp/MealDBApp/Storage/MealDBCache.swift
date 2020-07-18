@@ -44,9 +44,9 @@ class Cache: CacheProtocol {
 		static let allIngredientsKey = "all-ingredients"
 	}
 	
-	let persistence: Persistence
+	let persistence: PersistenceProtocol
 	
-	init(persistence: Persistence = Persistence()) {
+	init(persistence: PersistenceProtocol = Persistence()) {
 		self.persistence = persistence
 	}
 	
