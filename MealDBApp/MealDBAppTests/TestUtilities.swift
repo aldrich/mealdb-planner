@@ -56,18 +56,3 @@ class MockURLSessionDataTask: URLSessionDataTaskProtocol {
 	
 	func resume() { resumeWasCalled = true }
 }
-
-
-//extension Location {
-//	static func withId(_ id: Int, name: String) -> Location {
-//		return Location(id: id, name: name, mapSection: [:])
-//	}
-//}
-//
-//extension Vehicle {
-//	static func withId(_ id: Int, model: String) -> Vehicle {
-//		return Vehicle(id: id, vin: "", numberPlate: "",
-//					   position: .init(latitude: 0, longitude: 0),
-//					   fuel: 0, model: model)
-//	}
-//}

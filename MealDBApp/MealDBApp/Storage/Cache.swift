@@ -9,7 +9,7 @@
 import Foundation
 import PINCache
 
-protocol MealDBCache {
+protocol CacheProtocol {
 	
 	func getMeal(id: Int) -> Meal?
 	
@@ -19,8 +19,15 @@ protocol MealDBCache {
 
 	func addIngredient(_ ingredient: Ingredient)
 	
+	// nil: means not in cache
+	func getIngredients() -> [Ingredient]?
 	
-//
+	func setIngredients(_ ingredients: [Ingredient])
+	
+	func getMeals(ingredientName: String) -> [Meal]?
+	
+	func setMeals(_ meals: [Meal], ingredientName: String)
+	
 //	func getMealFavorites() -> [Int]
 //
 //	func setMealFavorites(ids: [Int])
@@ -28,19 +35,55 @@ protocol MealDBCache {
 //	func getIngredientFavorites() -> [Int]
 //
 //	func setIngredientFavorites(ids: [Int])
-//
-//	func getMeals(ingredientId: Int) -> [Meal]
-//
-//	func setMeals(meals: [Meal]?, ingredientId: Int)
 	
 }
 
-class MealDBCache: MealDBCache {
+class Cache: CacheProtocol {
 	
-	let persistence: Persistence
+	enum Constants {
+		static let allIngredientsKey = "all-ingredients"
+	}
 	
-	init(persistence: Persistence) {
+	let persistence: PersistenceProtocol
+	
+	init(persistence: PersistenceProtocol = Persistence()) {
 		self.persistence = persistence
+	}
+	
+	func getIngredients() -> [Ingredient]? {
+		guard let collection: IngredientCollection =  persistence.getObjectForKey(Constants.allIngredientsKey) else {
+			return nil
+		}
+		return collection.ingredientIds.compactMap { self.getIngredient(id: $0) }
+	}
+	
+	func setIngredients(_ ingredients: [Ingredient]) {
+		let collection = IngredientCollection(key: Constants.allIngredientsKey,
+											  ingredientIds: ingredients.compactMap { Int($0.idIngredient) })
+		// save collection
+		persistence.setObject(collection)
+		
+		// save individual elements too
+		ingredients.forEach { persistence.setObject($0) }
+	}
+	
+	func getMeals(ingredientName: String) -> [Meal]? {
+		guard let mealCollection: MealCollection =
+			persistence.getObjectForKey(ingredientName) else  {
+				return nil
+		}
+		return mealCollection.mealIds.compactMap { self.getMeal(id: $0) }
+	}
+	
+	func setMeals(_ meals: [Meal], ingredientName: String) {
+		let collection = MealCollection(key: ingredientName,
+			mealIds: meals.compactMap { Int($0.idMeal) })
+		
+		// save collection
+		persistence.setObject(collection)
+		
+		// save individual elements too
+		meals.forEach { persistence.setObject($0) }
 	}
 	
 	func getMeal(id: Int) -> Meal? {
