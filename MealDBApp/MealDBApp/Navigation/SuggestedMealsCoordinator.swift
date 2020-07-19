@@ -23,7 +23,14 @@ class SuggestedMealsCoordinator: CoordinatorBase {
 	}
 	
 	override func start() {
-		showIngredientsListView()
+		
+		// DEBUG
+//		if let meal = Cache().getMeal(id: 52940) { // brown stew chicken
+//			showMealDetailsView(meal: meal)
+//		} else {
+		
+			showIngredientsListView()
+//		}
 	}
 	
 	// this is the root of the navigation

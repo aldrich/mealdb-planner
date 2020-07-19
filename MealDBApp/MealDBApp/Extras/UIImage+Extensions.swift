@@ -34,7 +34,7 @@ extension Blurring where Self: UIView {
 	
 	func removeBlur(animated: Bool = true) {
 		if let blurView = blurView {
-			UIView.animate(withDuration: 1) {
+			UIView.animate(withDuration: 0.3) {
 				blurView.alpha = 0
 			}
 		}
