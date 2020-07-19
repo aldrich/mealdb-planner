@@ -105,13 +105,16 @@ class MealDetailView: UIView {
 	
 	@IBOutlet weak var mealNameLabel: UILabel! {
 		didSet {
-			mealNameLabel.backgroundColor = .systemBackground
+			mealNameLabel.backgroundColor = .clear
+			mealNameLabel.textColor = .white
 		}
 	}
 	
 	@IBOutlet weak var categoryAreaLabel: UILabel! {
 		didSet {
 			categoryAreaLabel.backgroundColor = .systemBackground
+			categoryAreaLabel.backgroundColor = .clear
+			categoryAreaLabel.textColor = .white
 		}
 	}
 	
@@ -142,6 +145,17 @@ class MealDetailView: UIView {
 	@IBOutlet weak var ingredientsLabel: UILabel! {
 		didSet {
 			ingredientsLabel.backgroundColor = .systemBackground
+		}
+	}
+	
+	@IBOutlet weak var imageOverlay: UIView! {
+		didSet {
+			imageOverlay.backgroundColor = .clear
+			
+			let gradientLayer = CAGradientLayer()
+			gradientLayer.frame = imageOverlay.bounds
+			gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+			imageOverlay.layer.insertSublayer(gradientLayer, at: 0)
 		}
 	}
 	
