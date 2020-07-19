@@ -10,6 +10,8 @@
 		1DE8D457F87FAB75C0969EA2 /* Pods_MealDBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3D23283E55860191E98617 /* Pods_MealDBApp.framework */; };
 		7EC1DF162BB1F898C1DDB838 /* Pods_MealDBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AE8C879175B9460A109306 /* Pods_MealDBAppTests.framework */; };
 		BE2B38A840508FF2A5B939AD /* Pods_MealDBApp_MealDBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9B1B5E73D12DFC663094E0 /* Pods_MealDBApp_MealDBAppUITests.framework */; };
+		BE4FB64024C32FCA00244047 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4FB63F24C32FCA00244047 /* MealDetailView.swift */; };
+		BE4FB64224C32FD600244047 /* MealDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4FB64124C32FD600244047 /* MealDetailView.xib */; };
 		BE7AD7EA24C297E100C2FDA1 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7E924C297E100C2FDA1 /* Meal.swift */; };
 		BE7AD7ED24C2992600C2FDA1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7EC24C2992600C2FDA1 /* APIClient.swift */; };
 		BE7AD7EF24C2994100C2FDA1 /* URLSession+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD7EE24C2994100C2FDA1 /* URLSession+Mocking.swift */; };
@@ -36,6 +38,10 @@
 		BE7AD82724C3000900C2FDA1 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD82324C2FAF300C2FDA1 /* FavoritesCoordinator.swift */; };
 		BE7AD82824C3007300C2FDA1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD82524C2FB3200C2FDA1 /* FavoritesViewController.swift */; };
 		BE7AD82A24C3052C00C2FDA1 /* NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD82924C3052C00C2FDA1 /* NavigationTests.swift */; };
+		BE7AD82E24C3072200C2FDA1 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD82C24C3072200C2FDA1 /* IngredientTableViewCell.swift */; };
+		BE7AD82F24C3072200C2FDA1 /* IngredientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7AD82D24C3072200C2FDA1 /* IngredientTableViewCell.xib */; };
+		BE7AD83224C30B4900C2FDA1 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7AD83024C30B4900C2FDA1 /* MealTableViewCell.swift */; };
+		BE7AD83324C30B4900C2FDA1 /* MealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7AD83124C30B4900C2FDA1 /* MealTableViewCell.xib */; };
 		BED5ADA924C1EFBE008338EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5ADA824C1EFBE008338EE /* AppDelegate.swift */; };
 		BED5ADB524C1EFC0008338EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED5ADB424C1EFC0008338EE /* Assets.xcassets */; };
 		BED5ADB824C1EFC0008338EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED5ADB624C1EFC0008338EE /* LaunchScreen.storyboard */; };
@@ -64,6 +70,8 @@
 		2C9B1B5E73D12DFC663094E0 /* Pods_MealDBApp_MealDBAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDBApp_MealDBAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		739E1FE27FCBA65EF1A573E0 /* Pods-MealDBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDBApp.release.xcconfig"; path = "Target Support Files/Pods-MealDBApp/Pods-MealDBApp.release.xcconfig"; sourceTree = "<group>"; };
 		B1FE3F48FB5EB1B5857AE640 /* Pods-MealDBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDBAppTests.release.xcconfig"; path = "Target Support Files/Pods-MealDBAppTests/Pods-MealDBAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE4FB63F24C32FCA00244047 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
+		BE4FB64124C32FD600244047 /* MealDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailView.xib; sourceTree = "<group>"; };
 		BE7AD7E924C297E100C2FDA1 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		BE7AD7EC24C2992600C2FDA1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BE7AD7EE24C2994100C2FDA1 /* URLSession+Mocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Mocking.swift"; sourceTree = "<group>"; };
@@ -90,6 +98,10 @@
 		BE7AD82324C2FAF300C2FDA1 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
 		BE7AD82524C2FB3200C2FDA1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BE7AD82924C3052C00C2FDA1 /* NavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTests.swift; sourceTree = "<group>"; };
+		BE7AD82C24C3072200C2FDA1 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		BE7AD82D24C3072200C2FDA1 /* IngredientTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientTableViewCell.xib; sourceTree = "<group>"; };
+		BE7AD83024C30B4900C2FDA1 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		BE7AD83124C30B4900C2FDA1 /* MealTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealTableViewCell.xib; sourceTree = "<group>"; };
 		BED5ADA524C1EFBE008338EE /* MealDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED5ADA824C1EFBE008338EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED5ADB424C1EFC0008338EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +160,15 @@
 				B1FE3F48FB5EB1B5857AE640 /* Pods-MealDBAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE4FB63E24C32F9C00244047 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE4FB63F24C32FCA00244047 /* MealDetailView.swift */,
+				BE4FB64124C32FD600244047 /* MealDetailView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BE7AD7E824C297D500C2FDA1 /* Models */ = {
@@ -228,6 +249,17 @@
 			path = Extras;
 			sourceTree = "<group>";
 		};
+		BE7AD82B24C3070200C2FDA1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BE7AD82C24C3072200C2FDA1 /* IngredientTableViewCell.swift */,
+				BE7AD82D24C3072200C2FDA1 /* IngredientTableViewCell.xib */,
+				BE7AD83024C30B4900C2FDA1 /* MealTableViewCell.swift */,
+				BE7AD83124C30B4900C2FDA1 /* MealTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BED5AD9C24C1EFBE008338EE = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +293,8 @@
 				BED5ADB424C1EFC0008338EE /* Assets.xcassets */,
 				BED5ADB624C1EFC0008338EE /* LaunchScreen.storyboard */,
 				BED5ADB924C1EFC0008338EE /* Info.plist */,
+				BE4FB63E24C32F9C00244047 /* Views */,
+				BE7AD82B24C3070200C2FDA1 /* Cells */,
 				BE7AD81D24C2F48400C2FDA1 /* IngredientsListViewController.swift */,
 				BE7AD81F24C2F78100C2FDA1 /* IngredientDetailsViewController.swift */,
 				BE7AD82124C2F8A500C2FDA1 /* MealDetailsViewController.swift */,
@@ -410,8 +444,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7AD83324C30B4900C2FDA1 /* MealTableViewCell.xib in Resources */,
+				BE7AD82F24C3072200C2FDA1 /* IngredientTableViewCell.xib in Resources */,
 				BED5ADB824C1EFC0008338EE /* LaunchScreen.storyboard in Resources */,
 				BED5ADB524C1EFC0008338EE /* Assets.xcassets in Resources */,
+				BE4FB64224C32FD600244047 /* MealDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +587,10 @@
 				BE7AD80224C2AB6B00C2FDA1 /* Cache.swift in Sources */,
 				BE7AD7EF24C2994100C2FDA1 /* URLSession+Mocking.swift in Sources */,
 				BE7AD7ED24C2992600C2FDA1 /* APIClient.swift in Sources */,
+				BE7AD82E24C3072200C2FDA1 /* IngredientTableViewCell.swift in Sources */,
 				BE7AD81E24C2F48400C2FDA1 /* IngredientsListViewController.swift in Sources */,
+				BE4FB64024C32FCA00244047 /* MealDetailView.swift in Sources */,
+				BE7AD83224C30B4900C2FDA1 /* MealTableViewCell.swift in Sources */,
 				BE7AD81524C2E92A00C2FDA1 /* CoordinatorBase.swift in Sources */,
 				BE7AD80A24C2BDDD00C2FDA1 /* Collections.swift in Sources */,
 				BE7AD80424C2AF1100C2FDA1 /* Persistence.swift in Sources */,

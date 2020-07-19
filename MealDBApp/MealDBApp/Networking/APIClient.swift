@@ -97,7 +97,7 @@ class APIClient: APIClientProtocol {
 									if let message = errorMsg {
 										print("error: \(message)")
 									}
-									completion(result?.meals.first)
+									completion(result?.meals?.first)
 			}
 		}
 	}

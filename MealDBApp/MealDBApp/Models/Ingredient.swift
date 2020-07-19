@@ -9,13 +9,13 @@
 import Foundation
 
 struct GetIngredientsResponse: Decodable {
-	let meals: [Ingredient]
+	let meals: [Ingredient]?
 }
 
 struct Ingredient: Codable {
 	let idIngredient: String
 	let strIngredient: String
-	let strDescription: String?
+	var strDescription: String?
 	let strType: String?
 }
 

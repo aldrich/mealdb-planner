@@ -1,26 +1,30 @@
 PODS:
-  - Kingfisher (5.14.0):
-    - Kingfisher/Core (= 5.14.0)
-  - Kingfisher/Core (5.14.0)
+  - MBProgressHUD (1.2.0)
   - PINCache (2.3)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
-  - Kingfisher
+  - MBProgressHUD
   - PINCache
+  - SDWebImage
   - SnapKit
 
 SPEC REPOS:
   trunk:
-    - Kingfisher
+    - MBProgressHUD
     - PINCache
+    - SDWebImage
     - SnapKit
 
 SPEC CHECKSUMS:
-  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: bdfb5a19284786db04bb76e5b60e095c5784c098
+PODFILE CHECKSUM: d57d49376f146b3a68b745569a4a39a07452ff5a
 
 COCOAPODS: 1.9.3

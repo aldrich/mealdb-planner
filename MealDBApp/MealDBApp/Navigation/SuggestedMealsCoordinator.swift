@@ -23,7 +23,14 @@ class SuggestedMealsCoordinator: CoordinatorBase {
 	}
 	
 	override func start() {
-		showIngredientsListView()
+		 showIngredientsListView()
+		
+//		let meal = Meal(id: 123,
+//						name: "Kinder Joy",
+//						instructions: "Cook your egg",
+//						mealThumb: "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg")
+//
+//		showMealDetailsView(meal: meal)
 	}
 	
 	// this is the root of the navigation
@@ -33,14 +40,14 @@ class SuggestedMealsCoordinator: CoordinatorBase {
 		navigationController.pushViewController(vc, animated: true)
 	}
 	
-	func showIngredientDetailsView(overRoot: Bool = false) {
-		let vc = IngredientDetailsViewController()
+	func showIngredientDetailsView(ingredient: Ingredient, overRoot: Bool = false) {
+		let vc = IngredientDetailsViewController(ingredient: ingredient)
 		vc.delegate = self
 		navigationController.pushViewController(vc, animated: true)
 	}
 	
-	func showMealDetailsView(overRoot: Bool = false) {
-		let vc = MealDetailsViewController()
+	func showMealDetailsView(meal: Meal, overRoot: Bool = false) {
+		let vc = MealDetailsViewController(meal: meal)
 		vc.delegate = self
 		navigationController.pushViewController(vc, animated: true)
 	}
@@ -48,15 +55,14 @@ class SuggestedMealsCoordinator: CoordinatorBase {
 
 extension SuggestedMealsCoordinator: IngredientsListViewControllerDelegate {
 
-	func shouldGoToIngredientDetailView() {
-		showIngredientDetailsView()
+	func shouldGoToIngredientDetailView(ingredient: Ingredient) {
+		showIngredientDetailsView(ingredient: ingredient)
 	}
 }
 
 extension SuggestedMealsCoordinator: IngredientDetailsViewControllerDelegate {
-	
-	func shouldGoToMealDetailView() {
-		showMealDetailsView()
+	func shouldGoToMealDetailView(meal: Meal) {
+		showMealDetailsView(meal: meal)
 	}
 }
 

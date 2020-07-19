@@ -47,19 +47,19 @@ extension Persistence {
 		
 		ret.diskCache.ageLimit = Constants.pinCacheDiskAgeLimit
 		
-		#if DEBUG
-		ret.diskCache.didAddObjectBlock = { mockCache, key, object, url in
-			print("PINCache: added to disk cache object with key \(key)")
-		}
-
-		ret.diskCache.didRemoveObjectBlock = { mockCache, key, object, url in
-			print("PINCache: removed from disk cache object with key \(key)")
-		}
-
-		ret.memoryCache.didRemoveAllObjectsBlock = { _ in
-			print("PINCache: removing all objects from memory cache")
-		}
-		#endif
+//		#if DEBUG
+//		ret.diskCache.didAddObjectBlock = { mockCache, key, object, url in
+//			print("PINCache: added to disk cache object with key \(key)")
+//		}
+//
+//		ret.diskCache.didRemoveObjectBlock = { mockCache, key, object, url in
+//			print("PINCache: removed from disk cache object with key \(key)")
+//		}
+//
+//		ret.memoryCache.didRemoveAllObjectsBlock = { _ in
+//			print("PINCache: removing all objects from memory cache")
+//		}
+//		#endif
 		
 		return ret
 	}

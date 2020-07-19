@@ -6,9 +6,10 @@ target 'MealDBApp' do
   use_frameworks!
 
   # Pods for MealDBApp
-  pod 'Kingfisher'
+  pod 'SDWebImage'
   pod 'PINCache'
   pod 'SnapKit'
+  pod 'MBProgressHUD'
 
   target 'MealDBAppTests' do
     inherit! :search_paths
