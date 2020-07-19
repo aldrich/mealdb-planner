@@ -48,6 +48,10 @@ class IngredientsListViewController: UIViewController {
 			guard let self = self else { return }
 			
 			if isRemote {
+				if self.ingredients == nil {
+					self.ingredients = ingredients
+					self.tableView.reloadData()
+				}
 				self.progressHUD?.hide(animated: true)
 			} else {
 				if ingredients.isEmpty {

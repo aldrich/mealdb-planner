@@ -74,6 +74,11 @@ class IngredientDetailsViewController: UIViewController {
 			
 			if isRemote {
 				self.progressHUD?.hide(animated: true)
+				
+				if self.meals == nil {
+					self.meals = meals
+					self.tableView.reloadData()
+				}				
 			} else {
 				if meals.isEmpty {
 					self.progressHUD = MBProgressHUD

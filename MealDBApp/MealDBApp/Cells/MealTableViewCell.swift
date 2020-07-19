@@ -34,7 +34,7 @@ class MealTableViewCell: UITableViewCell {
 			return
 		}
 		
-		let urlString = String(format: thumbUrl)
+		let urlString = String(format: thumbUrl + "/preview")
 		let url = URL(string: urlString)!
 
 		thumbImageView.sd_setImage(with: url)

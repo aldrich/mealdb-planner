@@ -33,9 +33,11 @@ class Persistence: PersistenceProtocol {
 	}
 	
 	func setObject<T: Cacheable>(_ object: T) {
-		let key = object.key
-		let encoded = object.encodedDict
-		pinCache.setObject(encoded as NSCoding, forKey: key)
+		DispatchQueue.global(qos: .background).async {
+			let key = object.key
+			let encoded = object.encodedDict
+			self.pinCache.setObject(encoded as NSCoding, forKey: key)
+		}
 	}
 }
 
