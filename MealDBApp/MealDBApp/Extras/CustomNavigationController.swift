@@ -18,7 +18,7 @@ class CustomNavigationController: UINavigationController {
 	private func setBackButton() {
 		let backButton = UIBarButtonItem()
 		backButton.title = ""
-		backButton.tintColor = Colors.primary
+		backButton.tintColor = Colors.secondary
 		viewControllers.last?.navigationItem.backBarButtonItem = backButton
 	}
 }
