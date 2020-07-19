@@ -14,10 +14,18 @@ class MealDetailView: UIView {
 
 	var meal: Meal? {
 		didSet {
+			
+			// full view image URL, might not yet be loaded.
 			let urlStr = self.meal?.strMealThumb?
 				.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
 			let url = URL(string: urlStr!)!
-			thumbImageView.sd_setImage(with: url)
+			
+			// thumb image URL, possibly already loaded.
+			let thumbUrl = urlStr! + "/preview"
+			
+			let placeholder = SDImageCache.shared.imageFromCache(forKey: thumbUrl)
+			
+			thumbImageView.sd_setImage(with: url, placeholderImage: placeholder)
 			mealNameLabel.text = meal?.strMeal
 			instructionsLabel.text = meal?.strInstructions
 		}
@@ -65,15 +73,15 @@ class MealDetailView: UIView {
 	
 	func configure() {
 
-		Bundle.main
-			.loadNibNamed("MealDetailView", owner: self, options: nil)
+		Bundle.main.loadNibNamed("MealDetailView",
+								 owner: self,
+								 options: nil)
 		
 		addSubview(contentView)
 		
 		contentView.snp.makeConstraints { make in
 			make.edges.equalToSuperview()
 		}
-		//contentView.frame = self.bounds
 	}
 	
 	

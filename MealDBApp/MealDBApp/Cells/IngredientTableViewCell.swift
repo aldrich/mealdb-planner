@@ -13,6 +13,10 @@ class IngredientTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var thumbImageView: UIImageView! {
 		didSet {
+			thumbImageView.layer.cornerRadius = 3
+			thumbImageView.backgroundColor = UIColor.red.withAlphaComponent(0.3)
+			thumbImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
+			thumbImageView.layer.borderWidth = 0.5
 			
 		}
 	}
