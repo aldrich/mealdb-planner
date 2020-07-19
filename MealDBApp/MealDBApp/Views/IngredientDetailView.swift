@@ -52,7 +52,7 @@ class IngredientDetailView: UIView {
 	@IBOutlet weak var descriptionLabel: UILabel! {
 		didSet {
 			descriptionLabel.backgroundColor = .clear
-			descriptionLabel.textColor = .white
+			descriptionLabel.textColor = Colors.secondary
 		}
 	}
 	
