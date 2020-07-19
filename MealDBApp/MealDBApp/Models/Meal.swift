@@ -165,7 +165,7 @@ extension Meal {
 
 extension Meal {
 	
-	var ingredientsList: [String] {
+	func getIngredientsList() -> [String] {
 		
 		var ret = [String]()
 		
@@ -202,4 +202,23 @@ extension Meal {
 		return ret
 	}
 	
+	func getImageUrl(isThumb: Bool = false) -> URL? {
+		guard let thumbUrl = strMealThumb, let thumbUrlEncoded = thumbUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+			return nil
+		}
+		let urlString = thumbUrlEncoded + (isThumb ? "/preview" : "")
+		return URL(string: urlString)
+	}
+	
+	func getInstructionsClean() -> String {
+		return (strInstructions ?? "")
+			.trimmingCharacters(in: .whitespaces)
+			.replacingOccurrences(of: "\r\n\r\n", with: "\r\n")
+	}
+	
+	func getAreaAndCategory() -> String {
+		return [ strCategory, strArea ]
+			.compactMap { $0 }
+			.joined(separator: " • ")
+	}
 }

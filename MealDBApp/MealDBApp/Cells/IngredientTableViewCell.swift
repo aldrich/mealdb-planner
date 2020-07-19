@@ -17,7 +17,6 @@ class IngredientTableViewCell: UITableViewCell {
 			thumbImageView.backgroundColor = UIColor.red.withAlphaComponent(0.3)
 			thumbImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
 			thumbImageView.layer.borderWidth = 0.5
-			
 		}
 	}
 	
@@ -33,8 +32,7 @@ class IngredientTableViewCell: UITableViewCell {
 		}
 	}
 	
-	@IBOutlet weak var typeLabel: UILabel!
-		{
+	@IBOutlet weak var typeLabel: UILabel! {
 		didSet {
 			typeLabel.backgroundColor = .clear
 		}
@@ -46,21 +44,8 @@ class IngredientTableViewCell: UITableViewCell {
 	}
 	
 	private func configureImage(_ ingredient: Ingredient) {
-		let urlString = String(format: "https://www.themealdb.com/images/ingredients/%@-small.png", ingredient.strIngredient)
-			.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-		
-		
-		
-		let url = URL(string: urlString!)!
-		
-		thumbImageView.sd_setImage(with: url)
-		
+		if let url = ingredient.smallImageUrl {
+			thumbImageView.sd_setImage(with: url)
+		}
 	}
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

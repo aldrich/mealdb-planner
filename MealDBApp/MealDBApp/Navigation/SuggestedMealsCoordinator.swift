@@ -66,8 +66,4 @@ extension SuggestedMealsCoordinator: IngredientDetailsViewControllerDelegate {
 	}
 }
 
-extension SuggestedMealsCoordinator: MealDetailsViewControllerDelegate {
-	func shouldDoX() {
-		delegate?.shouldShowFavorites()
-	}	
-}
+extension SuggestedMealsCoordinator: MealDetailsViewControllerDelegate {}

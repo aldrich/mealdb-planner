@@ -9,9 +9,8 @@
 import UIKit
 import SnapKit
 
-protocol MealDetailsViewControllerDelegate: class {
-	func shouldDoX()
-}
+// TO BE FILLED UP
+protocol MealDetailsViewControllerDelegate: class {}
 
 class MealDetailsViewController: UIViewController {
 
@@ -28,7 +27,10 @@ class MealDetailsViewController: UIViewController {
 	
 	let scrollView: UIScrollView = {
 		let scrollView = UIScrollView()
-		scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+		scrollView.contentInset = UIEdgeInsets(top: 0,
+											   left: 0,
+											   bottom: 40,
+											   right: 0)
 		return scrollView
 	}()
 	
@@ -48,8 +50,7 @@ class MealDetailsViewController: UIViewController {
         
 		fetchMealDetails()
 		setupView()
-		
-		configureView()
+		detailView.meal = meal
     }
 	
 	func fetchMealDetails() {
@@ -59,7 +60,7 @@ class MealDetailsViewController: UIViewController {
 		dataProvider.getMeal(id: id) { [weak self] meal, isRemote in
 			if let meal = meal {
 				self?.meal = meal
-				self?.configureView()
+				self?.detailView.meal = meal
 			}
 		}
 	}

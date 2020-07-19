@@ -24,3 +24,13 @@ extension Ingredient {
 		self.init(idIngredient: "\(id)", strIngredient: name, strDescription: desc, strType: type)
 	}
 }
+
+extension Ingredient {
+	
+	var smallImageUrl: URL? {
+		let formatStr = "https://www.themealdb.com/images/ingredients/%@-small.png"
+		let urlString = String(format: formatStr, strIngredient)
+			.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+		return URL(string: urlString!)
+	}
+}

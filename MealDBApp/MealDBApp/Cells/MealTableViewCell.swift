@@ -25,18 +25,12 @@ class MealTableViewCell: UITableViewCell {
 	
 	func configureWithMeal(_ meal: Meal) {
 		mealNameLabel.text = meal.strMeal
-		
 		configureThumb(meal)
 	}
 	
 	private func configureThumb(_ meal: Meal) {
-		guard let thumbUrl = meal.strMealThumb else {
-			return
+		if let url = meal.getImageUrl(isThumb: true) {
+			thumbImageView.sd_setImage(with: url)
 		}
-		
-		let urlString = String(format: thumbUrl + "/preview")
-		let url = URL(string: urlString)!
-
-		thumbImageView.sd_setImage(with: url)
 	}
 }

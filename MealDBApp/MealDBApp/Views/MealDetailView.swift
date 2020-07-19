@@ -11,50 +11,37 @@ import SDWebImage
 import SnapKit
 
 class MealDetailView: UIView {
-
+	
 	var meal: Meal? {
 		didSet {
 			
 			guard let meal = meal else { return }
 			
 			// full view image URL, might not yet be loaded.
-			let urlStr = self.meal?.strMealThumb?
-				.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-			let url = URL(string: urlStr!)!
+			let url = meal.getImageUrl()!
 			
+			// thumb image URL, possibly already loaded.
+			let thumbUrl = meal.getImageUrl(isThumb: true)
+			let thumbUrlStr = thumbUrl?.absoluteString
 			
-				// thumb image URL, possibly already loaded.
-				let thumbUrlStr = urlStr! + "/preview"
-				
-				let placeholder = SDImageCache.shared
-					.imageFromCache(forKey: thumbUrlStr)
-				
-				thumbImageView.sd_setImage(with: url,
-										   placeholderImage: placeholder) {
-											[weak self] image, error, cacheType, url in
-											
-											if let _ = SDImageCache.shared.imageFromCache(forKey: urlStr) {
-											
-												// only remove it when replaced with final image
-												self?.thumbImageView.removeBlur()
-											}
+			let placeholder = SDImageCache.shared
+				.imageFromCache(forKey: thumbUrlStr)
+			
+			thumbImageView.sd_setImage(with: url, placeholderImage: placeholder) {
+				[weak self] image, error, cacheType, url in
+				if let _ = SDImageCache.shared.imageFromCache(forKey: url?.absoluteString) {
+					// only remove blur after being replaced with final image
+					self?.thumbImageView.removeBlur()
 				}
+			}
 			
 			mealNameLabel.text = meal.strMeal.uppercased()
 			
-			let areaAndCategory = [
-				meal.strCategory,
-				meal.strArea
-				].compactMap { $0 }.joined(separator: " • ")
-			
-			categoryAreaLabel.text = areaAndCategory
-			
-			let instructionLabelStr = (meal.strInstructions ?? "")
-				.replacingOccurrences(of: "\r\n\r\n", with: "\r\n")
+			categoryAreaLabel.text = meal.getAreaAndCategory()
 						
-			setInstructionLabel(text: instructionLabelStr)
+			setInstructionLabel(text: meal.getInstructionsClean())
 			
-			setIngredientsLabel(list: meal.ingredientsList)
+			setIngredientsLabel(list: meal.getIngredientsList())
 		}
 	}
 	
@@ -88,11 +75,9 @@ class MealDetailView: UIView {
 	
 	@IBOutlet weak var thumbImageView: UIImageView! {
 		didSet {
-			thumbImageView.contentMode = .scaleAspectFill
-			
+			thumbImageView.contentMode = .scaleAspectFill			
 			let transition = SDWebImageTransition.fade
 			thumbImageView.sd_imageTransition = transition
-			
 			thumbImageView.addBlur()
 		}
 	}
@@ -119,7 +104,7 @@ class MealDetailView: UIView {
 		didSet {
 			instructionsHeaderLabel.isHidden = true
 			instructionsHeaderLabel.layer.cornerRadius = 2
-			instructionsHeaderLabel.backgroundColor = .init(white: 0, alpha: 0.1)
+			instructionsHeaderLabel.backgroundColor = .systemGray4
 			instructionsHeaderLabel.layer.masksToBounds = true
 		}
 	}
@@ -134,7 +119,7 @@ class MealDetailView: UIView {
 		didSet {			
 			ingredientsHeaderLabel.isHidden = true
 			ingredientsHeaderLabel.layer.cornerRadius = 2
-			ingredientsHeaderLabel.backgroundColor = .init(white: 0, alpha: 0.1)
+			ingredientsHeaderLabel.backgroundColor = .systemGray4
 			ingredientsHeaderLabel.layer.masksToBounds = true
 		}
 	}
@@ -156,7 +141,7 @@ class MealDetailView: UIView {
 	}
 	
 	func configure() {
-
+		
 		Bundle.main.loadNibNamed("MealDetailView",
 								 owner: self,
 								 options: nil)

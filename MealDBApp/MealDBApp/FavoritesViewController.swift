@@ -17,11 +17,15 @@ class FavoritesViewController: UIViewController {
 	weak var delegate: FavoritesViewControllerDelegate?
 	
 	override func viewDidLoad() {
+		
 		super.viewDidLoad()
 		
-		view.backgroundColor = .yellow
+		view.backgroundColor = .systemBackground
 		
-		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "dismiss", style: .plain, target: self, action: #selector(dismiss))
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "dismiss",
+															style: .plain,
+															target: self,
+															action: #selector(dismiss))
 	}
 	
 	@objc func dismiss(sender: Any) {
