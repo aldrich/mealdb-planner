@@ -59,8 +59,8 @@ class MealDetailsViewController: UIViewController {
 		dataProvider.getMeal(id: id) { [weak self] meal, isRemote in
 			if let meal = meal {
 				self?.meal = meal
+				self?.configureView()
 			}
-			self?.configureView()
 		}
 	}
 

@@ -26,9 +26,22 @@ class MealDetailView: UIView {
 			let placeholder = SDImageCache.shared.imageFromCache(forKey: thumbUrl)
 			
 			thumbImageView.sd_setImage(with: url, placeholderImage: placeholder)
+			
 			mealNameLabel.text = meal?.strMeal
-			instructionsLabel.text = meal?.strInstructions
+			
+			setInstructionLabel(text: meal?.strInstructions ?? "")
 		}
+	}
+	
+	private func setInstructionLabel(text: String) {
+		let paragraphStyle = NSMutableParagraphStyle()
+		paragraphStyle.lineSpacing = 3
+		
+		let attrString = NSMutableAttributedString(string: text)
+		attrString.addAttribute(.paragraphStyle,
+								value:paragraphStyle,
+								range: NSMakeRange(0, attrString.length))
+		instructionsLabel.attributedText = attrString
 	}
 	
 	@IBOutlet var contentView: UIView! {
@@ -83,6 +96,4 @@ class MealDetailView: UIView {
 			make.edges.equalToSuperview()
 		}
 	}
-	
-	
 }
