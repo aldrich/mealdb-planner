@@ -20,12 +20,20 @@ class MealDetailView: UIView {
 				.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
 			let url = URL(string: urlStr!)!
 			
-			// thumb image URL, possibly already loaded.
-			let thumbUrl = urlStr! + "/preview"
-			
-			let placeholder = SDImageCache.shared.imageFromCache(forKey: thumbUrl)
-			
-			thumbImageView.sd_setImage(with: url, placeholderImage: placeholder)
+			if oldValue == nil {
+				// thumb image URL, possibly already loaded.
+				let thumbUrlStr = urlStr! + "/preview"
+				
+				let placeholder = SDImageCache.shared
+					.imageFromCache(forKey: thumbUrlStr)
+				
+				thumbImageView.sd_setImage(with: url,
+										   placeholderImage: placeholder) {
+											[weak self] _, _, _, _ in
+											self?.thumbImageView.removeBlur()
+				}
+				
+			}
 			
 			mealNameLabel.text = meal?.strMeal
 			
@@ -42,6 +50,17 @@ class MealDetailView: UIView {
 								value:paragraphStyle,
 								range: NSMakeRange(0, attrString.length))
 		instructionsLabel.attributedText = attrString
+	}
+	
+	@IBOutlet weak var thumbImageView: UIImageView! {
+		didSet {
+			thumbImageView.contentMode = .scaleAspectFill
+			
+			let transition = SDWebImageTransition.fade
+			thumbImageView.sd_imageTransition = transition
+			
+			thumbImageView.addBlur()
+		}
 	}
 	
 	@IBOutlet var contentView: UIView! {
@@ -65,12 +84,6 @@ class MealDetailView: UIView {
 	@IBOutlet weak var instructionsHeaderLabel: UILabel! {
 		didSet {
 			instructionsHeaderLabel.backgroundColor = .white
-		}
-	}
-	
-	@IBOutlet weak var thumbImageView: UIImageView! {
-		didSet {
-			thumbImageView.contentMode = .scaleAspectFill
 		}
 	}
 	
