@@ -17,6 +17,7 @@
 		BE18DBCF24C435B7001052F6 /* MealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBCE24C435B7001052F6 /* MealTests.swift */; };
 		BE18DBD324C45E8C001052F6 /* IngredientDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE18DBD224C45E8C001052F6 /* IngredientDetailView.xib */; };
 		BE18DBD424C46F08001052F6 /* IngredientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBD024C45E50001052F6 /* IngredientDetailView.swift */; };
+		BE18DBDA24C47DDB001052F6 /* ChunkFive-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE18DBD624C47CEF001052F6 /* ChunkFive-Regular.otf */; };
 		BE2B38A840508FF2A5B939AD /* Pods_MealDBApp_MealDBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9B1B5E73D12DFC663094E0 /* Pods_MealDBApp_MealDBAppUITests.framework */; };
 		BE4FB64024C32FCA00244047 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4FB63F24C32FCA00244047 /* MealDetailView.swift */; };
 		BE4FB64224C32FD600244047 /* MealDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4FB64124C32FD600244047 /* MealDetailView.xib */; };
@@ -86,6 +87,7 @@
 		BE18DBCE24C435B7001052F6 /* MealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTests.swift; sourceTree = "<group>"; };
 		BE18DBD024C45E50001052F6 /* IngredientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailView.swift; sourceTree = "<group>"; };
 		BE18DBD224C45E8C001052F6 /* IngredientDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientDetailView.xib; sourceTree = "<group>"; };
+		BE18DBD624C47CEF001052F6 /* ChunkFive-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChunkFive-Regular.otf"; sourceTree = "<group>"; };
 		BE4FB63F24C32FCA00244047 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		BE4FB64124C32FD600244047 /* MealDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailView.xib; sourceTree = "<group>"; };
 		BE7AD7E924C297E100C2FDA1 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 				BE18DBCC24C4304A001052F6 /* String+Extensions.swift */,
 			);
 			path = Extras;
+			sourceTree = "<group>";
+		};
+		BE18DBD524C47CE1001052F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE18DBD624C47CEF001052F6 /* ChunkFive-Regular.otf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		BE4FB63E24C32F9C00244047 /* Views */ = {
@@ -324,6 +334,7 @@
 				BED5ADB424C1EFC0008338EE /* Assets.xcassets */,
 				BED5ADB624C1EFC0008338EE /* LaunchScreen.storyboard */,
 				BED5ADB924C1EFC0008338EE /* Info.plist */,
+				BE18DBD524C47CE1001052F6 /* Resources */,
 				BE4FB63E24C32F9C00244047 /* Views */,
 				BE7AD82B24C3070200C2FDA1 /* Cells */,
 				BE7AD81D24C2F48400C2FDA1 /* IngredientsListViewController.swift */,
@@ -480,6 +491,7 @@
 				BE7AD82F24C3072200C2FDA1 /* IngredientTableViewCell.xib in Resources */,
 				BED5ADB824C1EFC0008338EE /* LaunchScreen.storyboard in Resources */,
 				BE18DBD324C45E8C001052F6 /* IngredientDetailView.xib in Resources */,
+				BE18DBDA24C47DDB001052F6 /* ChunkFive-Regular.otf in Resources */,
 				BED5ADB524C1EFC0008338EE /* Assets.xcassets in Resources */,
 				BE4FB64224C32FD600244047 /* MealDetailView.xib in Resources */,
 			);

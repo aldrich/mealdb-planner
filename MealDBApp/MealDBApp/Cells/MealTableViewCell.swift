@@ -11,6 +11,13 @@ import SDWebImage
 
 class MealTableViewCell: UITableViewCell {
 
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		backgroundView = UIView()
+		backgroundView?.backgroundColor = Colors.secondary
+		selectedBackgroundView = backgroundView
+	}
+	
 	@IBOutlet weak var thumbImageView: UIImageView! {
 		didSet {
 			thumbImageView.layer.cornerRadius = 4

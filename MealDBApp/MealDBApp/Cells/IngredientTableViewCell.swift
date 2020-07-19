@@ -11,11 +11,18 @@ import SDWebImage
 
 class IngredientTableViewCell: UITableViewCell {
 
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		backgroundView = UIView()
+		backgroundView?.backgroundColor = Colors.secondary
+		selectedBackgroundView = backgroundView
+	}
+	
 	@IBOutlet weak var thumbImageView: UIImageView! {
 		didSet {
 			thumbImageView.layer.cornerRadius = 3
 			thumbImageView.backgroundColor = Colors.primary
-			thumbImageView.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+			thumbImageView.layer.borderColor = Colors.secondary.cgColor
 			thumbImageView.layer.borderWidth = 1
 		}
 	}
@@ -35,6 +42,13 @@ class IngredientTableViewCell: UITableViewCell {
 	@IBOutlet weak var typeLabel: UILabel! {
 		didSet {
 			typeLabel.backgroundColor = .clear
+		}
+	}
+	
+	@IBOutlet weak var divider: UIView! {
+		didSet {
+			divider.isHidden = true
+			divider.backgroundColor = Colors.secondary
 		}
 	}
 	

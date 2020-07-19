@@ -31,7 +31,7 @@ class IngredientDetailsViewController: UIViewController {
 
 		let nib = UINib(nibName: "MealTableViewCell", bundle: nil)
 		tbv.register(nib, forCellReuseIdentifier: "cell")
-
+		tbv.separatorStyle = .none
 		tbv.delegate = self
 		tbv.dataSource = self
 		return tbv
