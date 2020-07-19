@@ -17,38 +17,7 @@ class MealDetailView: UIView {
 			
 			guard let meal = meal else { return }
 			
-			// full view image URL, might not yet be loaded.
-			let url = meal.getImageUrl()!
-			
-			// thumb image URL, possibly already loaded.
-			let thumbUrl = meal.getImageUrl(isThumb: true)
-			let thumbUrlStr = thumbUrl?.absoluteString
-			
-			let placeholder = SDImageCache.shared
-				.imageFromCache(forKey: thumbUrlStr)
-			
-			thumbImageView.sd_setImage(with: url, placeholderImage: placeholder) {
-				[weak self] image, error, cacheType, url in
-				if let _ = SDImageCache.shared.imageFromCache(forKey: url?.absoluteString) {
-					// only remove blur after being replaced with final image
-					self?.thumbImageView.removeBlur()
-				}
-				
-				// 200x200
-				// https://www.themealdb.com/images/media/meals/ysqrus1487425681.jpg/preview
-				if let image = image {
-					let size = CGSize(width: 200, height: 200)
-					let resized = image.sd_resizedImage(with: size,
-														scaleMode: .aspectFill)
-					
-					// in case a better version is found, resize it for its
-					// thumbnail counterpart
-					if let urlStr = url?.absoluteString {
-						let key = urlStr + "/preview"
-						SDImageCache.shared.store(resized, forKey: key)
-					}
-				}
-			}
+			configureImage(meal: meal)
 			
 			mealNameLabel.text = meal.strMeal.uppercased()
 			
@@ -58,34 +27,6 @@ class MealDetailView: UIView {
 			
 			setIngredientsLabel(list: meal.getIngredientsList())
 		}
-	}
-	
-	private func setInstructionLabel(text: String) {
-		let paragraphStyle = NSMutableParagraphStyle()
-		paragraphStyle.lineSpacing = 4
-		paragraphStyle.paragraphSpacing = 8
-		paragraphStyle.alignment = .justified
-		paragraphStyle.firstLineHeadIndent = 12
-		let attrString = NSMutableAttributedString(string: text)
-		attrString.addAttribute(.paragraphStyle,
-								value: paragraphStyle,
-								range: NSMakeRange(0, attrString.length))
-		instructionsLabel.attributedText = attrString
-		instructionsHeaderLabel.isHidden = text.isEmpty
-	}
-	
-	private func setIngredientsLabel(list: [String]) {
-		let paragraphStyle = NSMutableParagraphStyle()
-		paragraphStyle.lineSpacing = 3
-		
-		let text = list.joined(separator: "\r\n")
-		
-		let attrString = NSMutableAttributedString(string: text)
-		attrString.addAttribute(.paragraphStyle,
-								value: paragraphStyle,
-								range: NSMakeRange(0, attrString.length))
-		ingredientsLabel.attributedText = attrString
-		ingredientsHeaderLabel.isHidden = text.isEmpty
 	}
 	
 	@IBOutlet weak var thumbImageView: UIImageView! {
@@ -153,12 +94,6 @@ class MealDetailView: UIView {
 	@IBOutlet weak var imageOverlay: UIView! {
 		didSet {
 			imageOverlay.backgroundColor = .clear
-			
-			let gradientLayer = CAGradientLayer()
-			gradientLayer.frame = imageOverlay.bounds
-			gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-			imageOverlay.layer.insertSublayer(gradientLayer, at: 0)
-			gradientLayer.opacity = 0.7
 		}
 	}
 	
@@ -182,6 +117,84 @@ class MealDetailView: UIView {
 		
 		contentView.snp.makeConstraints { make in
 			make.edges.equalToSuperview()
+		}
+	}
+	
+	private func updateGradientOverlay() {
+		var gradientLayer: CAGradientLayer!
+		
+		let gradientLayers = imageOverlay.layer.sublayers?.filter { $0 is CAGradientLayer }
+		
+		if let layer = gradientLayers?.first as? CAGradientLayer {
+			gradientLayer = layer
+		} else {
+			gradientLayer = CAGradientLayer()
+			gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+			imageOverlay.layer.insertSublayer(gradientLayer, at: 0)
+			gradientLayer.opacity = 1
+		}
+		gradientLayer.frame = imageOverlay.bounds
+	}
+	
+	private func setInstructionLabel(text: String) {
+		let paragraphStyle = NSMutableParagraphStyle()
+		paragraphStyle.lineSpacing = 4
+		paragraphStyle.paragraphSpacing = 8
+		paragraphStyle.alignment = .justified
+		paragraphStyle.firstLineHeadIndent = 12
+		let attrString = NSMutableAttributedString(string: text)
+		attrString.addAttribute(.paragraphStyle,
+								value: paragraphStyle,
+								range: NSMakeRange(0, attrString.length))
+		instructionsLabel.attributedText = attrString
+		instructionsHeaderLabel.isHidden = text.isEmpty
+	}
+	
+	private func setIngredientsLabel(list: [String]) {
+		let paragraphStyle = NSMutableParagraphStyle()
+		paragraphStyle.lineSpacing = 3
+		
+		let text = list.joined(separator: "\r\n")
+		
+		let attrString = NSMutableAttributedString(string: text)
+		attrString.addAttribute(.paragraphStyle,
+								value: paragraphStyle,
+								range: NSMakeRange(0, attrString.length))
+		ingredientsLabel.attributedText = attrString
+		ingredientsHeaderLabel.isHidden = text.isEmpty
+	}
+	
+	private func configureImage(meal: Meal) {
+		// full view image URL, might not yet be loaded.
+		let url = meal.getImageUrl()!
+		
+		// thumb image URL, possibly already loaded.
+		let thumbUrl = meal.getImageUrl(isThumb: true)
+		let thumbUrlStr = thumbUrl?.absoluteString
+		
+		let placeholder = SDImageCache.shared
+			.imageFromCache(forKey: thumbUrlStr)
+		
+		thumbImageView.sd_setImage(with: url, placeholderImage: placeholder) {
+			[weak self] image, error, cacheType, url in
+			
+			if let _ = SDImageCache.shared.imageFromCache(forKey: url?.absoluteString) {
+				// only remove blur after being replaced with final image
+				self?.thumbImageView.removeBlur()
+			}
+			
+			guard let image = image else { return }
+			
+			let size = CGSize(width: 200, height: 200)
+			let resized = image.sd_resizedImage(with: size,
+												scaleMode: .aspectFill)
+			
+			// in case a better version is found, resize it for its
+			// thumbnail counterpart
+			if let urlStr = url?.absoluteString {
+				let key = urlStr + "/preview"
+				SDImageCache.shared.store(resized, forKey: key)
+			}
 		}
 	}
 }
