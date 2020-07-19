@@ -99,11 +99,14 @@ class IngredientDetailsViewController: UIViewController {
 				if self.meals == nil {
 					self.meals = meals
 					self.tableView.reloadData()
-					
+				}
+				
+				if self.meals == nil || self.meals!.isEmpty {
 					// if meals empty, show an empty view.
 					self.emptyViewLabel.isHidden = false
 					self.tableView.isHidden = true
 				}
+				
 			} else {
 				if meals.isEmpty {
 					self.progressHUD = MBProgressHUD
@@ -114,6 +117,8 @@ class IngredientDetailsViewController: UIViewController {
 					self.tableView.reloadData()
 				}
 			}
+			
+			
 		}
 	}
 	

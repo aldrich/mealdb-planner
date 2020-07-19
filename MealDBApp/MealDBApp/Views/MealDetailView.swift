@@ -53,7 +53,7 @@ class MealDetailView: UIView {
 			mealNameLabel.text = meal.strMeal.uppercased()
 			
 			categoryAreaLabel.text = meal.getAreaAndCategory()
-						
+			
 			setInstructionLabel(text: meal.getInstructionsClean())
 			
 			setIngredientsLabel(list: meal.getIngredientsList())
@@ -156,6 +156,7 @@ class MealDetailView: UIView {
 			gradientLayer.frame = imageOverlay.bounds
 			gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
 			imageOverlay.layer.insertSublayer(gradientLayer, at: 0)
+			gradientLayer.opacity = 0.7
 		}
 	}
 	

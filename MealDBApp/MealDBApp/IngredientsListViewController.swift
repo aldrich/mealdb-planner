@@ -54,15 +54,18 @@ class IngredientsListViewController: UIViewController {
 				}
 				self.progressHUD?.hide(animated: true)
 			} else {
-				if ingredients.isEmpty {
+				if ingredients.isEmpty  {
 					self.progressHUD = MBProgressHUD
 						.showAdded(to: (self.navigationController?.view)!,
 								   animated: true)
 				} else {
-					self.ingredients = ingredients
-					self.tableView.reloadData()
+//					self.ingredients = ingredients
+//					self.tableView.reloadData()
 				}
 			}
+			
+			self.ingredients = ingredients
+			self.tableView.reloadData()
 			
 		}
 	}
