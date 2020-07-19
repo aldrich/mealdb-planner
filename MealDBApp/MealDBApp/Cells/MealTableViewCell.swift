@@ -30,7 +30,13 @@ class MealTableViewCell: UITableViewCell {
 	
 	private func configureThumb(_ meal: Meal) {
 		if let url = meal.getImageUrl(isThumb: true) {
-			thumbImageView.sd_setImage(with: url)
+			thumbImageView.sd_setImage(with: url) { [weak self] (_, e, t, u) in
+				if e != nil {
+					let unavailableImage = UIImage(named: "meal-na")
+					SDImageCache.shared.store(unavailableImage, forKey: url.absoluteString)
+					self?.thumbImageView.image = unavailableImage
+				}
+			}
 		}
 	}
 }

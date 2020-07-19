@@ -33,6 +33,21 @@ class MealDetailView: UIView {
 					// only remove blur after being replaced with final image
 					self?.thumbImageView.removeBlur()
 				}
+				
+				// 200x200
+				// https://www.themealdb.com/images/media/meals/ysqrus1487425681.jpg/preview
+				if let image = image {
+					let size = CGSize(width: 200, height: 200)
+					let resized = image.sd_resizedImage(with: size,
+														scaleMode: .aspectFill)
+					
+					// in case a better version is found, resize it for its
+					// thumbnail counterpart
+					if let urlStr = url?.absoluteString {
+						let key = urlStr + "/preview"
+						SDImageCache.shared.store(resized, forKey: key)
+					}
+				}
 			}
 			
 			mealNameLabel.text = meal.strMeal.uppercased()
@@ -75,7 +90,7 @@ class MealDetailView: UIView {
 	
 	@IBOutlet weak var thumbImageView: UIImageView! {
 		didSet {
-			thumbImageView.contentMode = .scaleAspectFill			
+			thumbImageView.contentMode = .scaleAspectFill
 			let transition = SDWebImageTransition.fade
 			thumbImageView.sd_imageTransition = transition
 			thumbImageView.addBlur()

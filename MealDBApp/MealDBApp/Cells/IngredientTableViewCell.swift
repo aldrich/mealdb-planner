@@ -45,7 +45,11 @@ class IngredientTableViewCell: UITableViewCell {
 	
 	private func configureImage(_ ingredient: Ingredient) {
 		if let url = ingredient.smallImageUrl {
-			thumbImageView.sd_setImage(with: url)
+			thumbImageView.sd_setImage(with: url) { [weak self] (_, e, _, _) in
+				if e != nil {
+					self?.thumbImageView.image = UIImage(named: "ingredient-na")
+				}
+			}
 		}
 	}
 }
