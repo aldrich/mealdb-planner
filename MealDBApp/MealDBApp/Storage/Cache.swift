@@ -19,23 +19,13 @@ protocol CacheProtocol {
 
 	func addIngredient(_ ingredient: Ingredient)
 	
-	// nil: means not in cache
 	func getIngredients() -> [Ingredient]?
 	
 	func setIngredients(_ ingredients: [Ingredient])
 	
 	func getMeals(ingredientName: String) -> [Meal]?
 	
-	func setMeals(_ meals: [Meal], ingredientName: String)
-	
-//	func getMealFavorites() -> [Int]
-//
-//	func setMealFavorites(ids: [Int])
-//
-//	func getIngredientFavorites() -> [Int]
-//
-//	func setIngredientFavorites(ids: [Int])
-	
+	func setMeals(_ meals: [Meal], ingredientName: String)	
 }
 
 class Cache: CacheProtocol {
@@ -60,10 +50,7 @@ class Cache: CacheProtocol {
 	func setIngredients(_ ingredients: [Ingredient]) {
 		let collection = IngredientCollection(key: Constants.allIngredientsKey,
 											  ingredientIds: ingredients.compactMap { Int($0.idIngredient) })
-		// save collection
 		persistence.setObject(collection)
-		
-		// save individual elements too
 		ingredients.forEach { persistence.setObject($0) }
 	}
 	
@@ -78,11 +65,7 @@ class Cache: CacheProtocol {
 	func setMeals(_ meals: [Meal], ingredientName: String) {
 		let collection = MealCollection(key: ingredientName,
 			mealIds: meals.compactMap { Int($0.idMeal) })
-		
-		// save collection
 		persistence.setObject(collection)
-		
-		// save individual elements too
 		meals.forEach { persistence.setObject($0) }
 	}
 	
@@ -103,36 +86,4 @@ class Cache: CacheProtocol {
 	func addIngredient(_ ingredient: Ingredient) {
 		persistence.setObject(ingredient)
 	}
-	
-//	func addIngredient(_ ingredient: Ingredient?, id: Int) {
-//
-//	}
-//
-//	func getMealFavorites() -> [Int] {
-//		return []
-//	}
-//
-//	func setMealFavorites(ids: [Int]) {
-//
-//	}
-//
-//	func getIngredientFavorites() -> [Int] {
-//		return []
-//	}
-//
-//	func getIngredient(id: Int) -> Ingredient? {
-//		return nil
-//	}
-//
-//	func setIngredientFavorites(ids: [Int]) {
-//
-//	}
-//
-//	func getMeals(ingredientId: Int) -> [Meal] {
-//		return []
-//	}
-//
-//	func setMeals(meals: [Meal]?, ingredientId: Int) {
-//
-//	}
 }

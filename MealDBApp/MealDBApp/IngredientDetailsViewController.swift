@@ -64,16 +64,22 @@ class IngredientDetailsViewController: UIViewController {
 	}
 	
 	private func fetchMeals() {
-		progressHUD = MBProgressHUD.showAdded(to: (navigationController?.view)!, animated: true)
 		
 		let name = ingredient.strIngredient
 		dataProvider.getMeals(ingredientName: name) { [weak self] meals, isRemote in
-			
-			self?.meals = meals
-			self?.tableView.reloadData()
+			guard let self = self else { return }
 			
 			if isRemote {
-				self?.progressHUD?.hide(animated: true)
+				self.progressHUD?.hide(animated: true)
+			} else {
+				if meals.isEmpty {
+					self.progressHUD = MBProgressHUD
+						.showAdded(to: (self.navigationController?.view)!,
+								   animated: true)
+				} else {
+					self.meals = meals
+					self.tableView.reloadData()
+				}
 			}
 		}
 	}
@@ -89,6 +95,8 @@ extension IngredientDetailsViewController: UITableViewDelegate {
 		if let meal = meals?[indexPath.row] {
 			selectedMeal(meal)
 		}
+		
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 }
 
@@ -102,12 +110,7 @@ extension IngredientDetailsViewController: UITableViewDataSource {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MealTableViewCell, let meal = meals?[indexPath.row] else {
 			return UITableViewCell()
 		}
-		
-		
-		// cell.textLabel?.text = meal.strMeal
 		cell.configureWithMeal(meal)
 		return cell
 	}
-	
-	
 }

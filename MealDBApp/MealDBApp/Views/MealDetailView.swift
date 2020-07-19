@@ -8,31 +8,51 @@
 
 import UIKit
 import SDWebImage
+import SnapKit
 
 class MealDetailView: UIView {
 
 	var meal: Meal? {
 		didSet {
-
-			let urlStr = self.meal?.strMealThumb?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+			let urlStr = self.meal?.strMealThumb?
+				.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
 			let url = URL(string: urlStr!)!
 			thumbImageView.sd_setImage(with: url)
-			
-			label1.text = meal?.strMeal
-			label2.text = meal?.strInstructions
-			
+			mealNameLabel.text = meal?.strMeal
+			instructionsLabel.text = meal?.strInstructions
 		}
 	}
-	@IBOutlet weak var label1: UILabel!
 	
-	@IBOutlet weak var label2: UILabel!
+	@IBOutlet var contentView: UIView! {
+		didSet {
+			contentView.backgroundColor = .white
+		}
+	}
+	
+	@IBOutlet weak var mealNameLabel: UILabel! {
+		didSet {
+			mealNameLabel.backgroundColor = .white
+		}
+	}
+	
+	@IBOutlet weak var instructionsLabel: UILabel! {
+		didSet {
+			instructionsLabel.backgroundColor = .white
+		}
+	}
+	
+	@IBOutlet weak var instructionsHeaderLabel: UILabel! {
+		didSet {
+			instructionsHeaderLabel.backgroundColor = .white
+		}
+	}
 	
 	@IBOutlet weak var thumbImageView: UIImageView! {
 		didSet {
 			thumbImageView.contentMode = .scaleAspectFill
-			thumbImageView.backgroundColor = .white
 		}
 	}
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		configure()
@@ -44,10 +64,17 @@ class MealDetailView: UIView {
 	}
 	
 	func configure() {
-		Bundle.main.loadNibNamed("MealDetailView", owner: self, options: nil)
+
+		Bundle.main
+			.loadNibNamed("MealDetailView", owner: self, options: nil)
+		
 		addSubview(contentView)
-		contentView.frame = self.bounds
+		
+		contentView.snp.makeConstraints { make in
+			make.edges.equalToSuperview()
+		}
+		//contentView.frame = self.bounds
 	}
 	
-	@IBOutlet var contentView: UIView!
+	
 }

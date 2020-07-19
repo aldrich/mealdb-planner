@@ -47,13 +47,17 @@ class IngredientsListViewController: UIViewController {
 			
 			guard let self = self else { return }
 			
-			self.ingredients = ingredients
-			self.tableView.reloadData()
-			
 			if isRemote {
 				self.progressHUD?.hide(animated: true)
-			} else if ingredients.isEmpty {
-				self.progressHUD = MBProgressHUD.showAdded(to: (self.navigationController?.view)!, animated: true)
+			} else {
+				if ingredients.isEmpty {
+					self.progressHUD = MBProgressHUD
+						.showAdded(to: (self.navigationController?.view)!,
+								   animated: true)
+				} else {
+					self.ingredients = ingredients
+					self.tableView.reloadData()
+				}
 			}
 			
 		}
@@ -82,6 +86,8 @@ extension IngredientsListViewController: UITableViewDelegate {
 		if let ingredient = ingredients?[indexPath.row] {
 			selectedIngredient(ingredient)
 		}
+		
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 }
 

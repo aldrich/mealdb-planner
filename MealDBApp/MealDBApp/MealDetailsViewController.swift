@@ -15,15 +15,21 @@ protocol MealDetailsViewControllerDelegate: class {
 
 class MealDetailsViewController: UIViewController {
 
-	// TODO: show details about the meal, preparation, pictures, etc.
-	
 	weak var delegate: MealDetailsViewControllerDelegate?
 	
-	let meal: Meal
+	let dataProvider = DataProvider()
+	
+	var meal: Meal
 	
 	let detailView: MealDetailView = {
 		let view = MealDetailView()
 		return view
+	}()
+	
+	let scrollView: UIScrollView = {
+		let scrollView = UIScrollView()
+		scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+		return scrollView
 	}()
 	
 	init(meal: Meal) {
@@ -40,25 +46,42 @@ class MealDetailsViewController: UIViewController {
 		title = meal.strMeal
 		view.backgroundColor = .white
         
+		fetchMealDetails()
+		setupView()
+		
 		configureView()
     }
+	
+	func fetchMealDetails() {
+		guard let id = Int(meal.idMeal) else {
+			fatalError("unable to get meal id.")
+		}
+		dataProvider.getMeal(id: id) { [weak self] meal, isRemote in
+			if let meal = meal {
+				self?.meal = meal
+			}
+			self?.configureView()
+		}
+	}
 
-	private func configureView() {
-
-		edgesForExtendedLayout = UIRectEdge()
+	private func setupView() {
+		// edgesForExtendedLayout = UIRectEdge()
 		
-		view.addSubview(detailView)
+		view.addSubview(scrollView)
 		
-		detailView.meal = meal
+		scrollView.snp.makeConstraints { make in
+			make.edges.equalToSuperview()
+		}
+		
+		scrollView.addSubview(detailView)
 		
 		detailView.snp.makeConstraints { make in
-			
-			make.top.equalTo(view.safeAreaInsets.top)
-			make.leading.trailing.equalToSuperview()
-			make.height.equalTo(320)
+			make.centerX.equalToSuperview()
+			make.top.left.bottom.equalToSuperview()
 		}
-
-		
-
+	}
+	
+	private func configureView() {
+		detailView.meal = meal
 	}
 }
