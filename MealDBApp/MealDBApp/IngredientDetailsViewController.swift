@@ -37,6 +37,17 @@ class IngredientDetailsViewController: UIViewController {
 		return tbv
 	}()
 	
+	lazy var emptyViewLabel: UILabel = {
+		let label = UILabel()
+		label.text = "Sorry, no meals found."
+		view.addSubview(label)
+		label.snp.makeConstraints { make in
+			make.center.equalToSuperview()
+		}
+		label.isHidden = true
+		return label
+	}()
+	
 	init(ingredient: Ingredient) {
 		self.ingredient = ingredient
 		super.init(nibName: nil, bundle: nil)
@@ -64,13 +75,23 @@ class IngredientDetailsViewController: UIViewController {
 		tableView.snp.makeConstraints { make in
 			make.edges.equalToSuperview()
 		}
+		
+		view.addSubview(emptyViewLabel)
+		
+		emptyViewLabel.snp.makeConstraints { make in
+			make.center.equalToSuperview()
+		}
 	}
 	
 	private func fetchMeals() {
 		
 		let name = ingredient.strIngredient
+		
 		dataProvider.getMeals(ingredientName: name) { [weak self] meals, isRemote in
 			guard let self = self else { return }
+			
+			self.emptyViewLabel.isHidden = true
+			self.tableView.isHidden = false
 			
 			if isRemote {
 				self.progressHUD?.hide(animated: true)
@@ -78,7 +99,11 @@ class IngredientDetailsViewController: UIViewController {
 				if self.meals == nil {
 					self.meals = meals
 					self.tableView.reloadData()
-				}				
+					
+					// if meals empty, show an empty view.
+					self.emptyViewLabel.isHidden = false
+					self.tableView.isHidden = true
+				}
 			} else {
 				if meals.isEmpty {
 					self.progressHUD = MBProgressHUD
