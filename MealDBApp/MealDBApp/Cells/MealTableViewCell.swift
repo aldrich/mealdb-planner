@@ -24,7 +24,7 @@ class MealTableViewCell: UITableViewCell {
 	}
 	
 	func configureWithMeal(_ meal: Meal) {
-		mealNameLabel.text = meal.strMeal
+		mealNameLabel.text = meal.strMeal.uppercased()
 		configureThumb(meal)
 	}
 	

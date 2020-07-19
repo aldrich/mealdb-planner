@@ -48,6 +48,11 @@ class IngredientDetailsViewController: UIViewController {
 		return label
 	}()
 	
+	lazy var ingredientDetailView: IngredientDetailView = {
+		let view = IngredientDetailView()
+		return view
+	}()
+	
 	init(ingredient: Ingredient) {
 		self.ingredient = ingredient
 		super.init(nibName: nil, bundle: nil)
@@ -68,12 +73,24 @@ class IngredientDetailsViewController: UIViewController {
 		
 		title = ingredient.strIngredient
 		
+		navigationController?.navigationBar.isTranslucent = false
+		
+		ingredientDetailView.ingredient = ingredient
+		
 		view.backgroundColor = .white
+		
+		view.addSubview(ingredientDetailView)
+		
+		ingredientDetailView.snp.makeConstraints { make in
+			make.top.leading.trailing.equalToSuperview()
+			make.height.greaterThanOrEqualTo(50)
+		}
 		
 		view.addSubview(tableView)
 		
 		tableView.snp.makeConstraints { make in
-			make.edges.equalToSuperview()
+			make.bottom.leading.trailing.equalToSuperview()
+			make.top.equalTo(ingredientDetailView.snp.bottom)
 		}
 		
 		view.addSubview(emptyViewLabel)
@@ -117,8 +134,6 @@ class IngredientDetailsViewController: UIViewController {
 					self.tableView.reloadData()
 				}
 			}
-			
-			
 		}
 	}
 	

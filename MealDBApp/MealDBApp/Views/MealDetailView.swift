@@ -68,7 +68,7 @@ class MealDetailView: UIView {
 		paragraphStyle.firstLineHeadIndent = 12
 		let attrString = NSMutableAttributedString(string: text)
 		attrString.addAttribute(.paragraphStyle,
-								value:paragraphStyle,
+								value: paragraphStyle,
 								range: NSMakeRange(0, attrString.length))
 		instructionsLabel.attributedText = attrString
 		instructionsHeaderLabel.isHidden = text.isEmpty
@@ -82,7 +82,7 @@ class MealDetailView: UIView {
 		
 		let attrString = NSMutableAttributedString(string: text)
 		attrString.addAttribute(.paragraphStyle,
-								value:paragraphStyle,
+								value: paragraphStyle,
 								range: NSMakeRange(0, attrString.length))
 		ingredientsLabel.attributedText = attrString
 		ingredientsHeaderLabel.isHidden = text.isEmpty
@@ -122,8 +122,9 @@ class MealDetailView: UIView {
 		didSet {
 			instructionsHeaderLabel.isHidden = true
 			instructionsHeaderLabel.layer.cornerRadius = 2
-			instructionsHeaderLabel.backgroundColor = .systemGray4
+			instructionsHeaderLabel.textColor = .white
 			instructionsHeaderLabel.layer.masksToBounds = true
+			instructionsHeaderLabel.backgroundColor = Colors.primary
 		}
 	}
 	
@@ -137,8 +138,9 @@ class MealDetailView: UIView {
 		didSet {			
 			ingredientsHeaderLabel.isHidden = true
 			ingredientsHeaderLabel.layer.cornerRadius = 2
-			ingredientsHeaderLabel.backgroundColor = .systemGray4
+			ingredientsHeaderLabel.textColor = .white
 			ingredientsHeaderLabel.layer.masksToBounds = true
+			ingredientsHeaderLabel.backgroundColor = Colors.primary
 		}
 	}
 	

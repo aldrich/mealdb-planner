@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		1DE8D457F87FAB75C0969EA2 /* Pods_MealDBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3D23283E55860191E98617 /* Pods_MealDBApp.framework */; };
 		7EC1DF162BB1F898C1DDB838 /* Pods_MealDBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AE8C879175B9460A109306 /* Pods_MealDBAppTests.framework */; };
-		BE18DBC424C3FB6E001052F6 /* AppDelegate+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBC324C3FB6E001052F6 /* AppDelegate+Setup.swift */; };
+		BE18DBC424C3FB6E001052F6 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBC324C3FB6E001052F6 /* Appearance.swift */; };
 		BE18DBC724C3FBF2001052F6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBC624C3FBF2001052F6 /* CustomNavigationController.swift */; };
 		BE18DBC924C414AF001052F6 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBC824C414AF001052F6 /* UIImage+Extensions.swift */; };
 		BE18DBCB24C42941001052F6 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBCA24C42941001052F6 /* PaddedLabel.swift */; };
 		BE18DBCD24C4304A001052F6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBCC24C4304A001052F6 /* String+Extensions.swift */; };
 		BE18DBCF24C435B7001052F6 /* MealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBCE24C435B7001052F6 /* MealTests.swift */; };
+		BE18DBD324C45E8C001052F6 /* IngredientDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE18DBD224C45E8C001052F6 /* IngredientDetailView.xib */; };
+		BE18DBD424C46F08001052F6 /* IngredientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBD024C45E50001052F6 /* IngredientDetailView.swift */; };
 		BE2B38A840508FF2A5B939AD /* Pods_MealDBApp_MealDBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9B1B5E73D12DFC663094E0 /* Pods_MealDBApp_MealDBAppUITests.framework */; };
 		BE4FB64024C32FCA00244047 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4FB63F24C32FCA00244047 /* MealDetailView.swift */; };
 		BE4FB64224C32FD600244047 /* MealDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4FB64124C32FD600244047 /* MealDetailView.xib */; };
@@ -76,12 +78,14 @@
 		2C9B1B5E73D12DFC663094E0 /* Pods_MealDBApp_MealDBAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDBApp_MealDBAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		739E1FE27FCBA65EF1A573E0 /* Pods-MealDBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDBApp.release.xcconfig"; path = "Target Support Files/Pods-MealDBApp/Pods-MealDBApp.release.xcconfig"; sourceTree = "<group>"; };
 		B1FE3F48FB5EB1B5857AE640 /* Pods-MealDBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDBAppTests.release.xcconfig"; path = "Target Support Files/Pods-MealDBAppTests/Pods-MealDBAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		BE18DBC324C3FB6E001052F6 /* AppDelegate+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Setup.swift"; sourceTree = "<group>"; };
+		BE18DBC324C3FB6E001052F6 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		BE18DBC624C3FBF2001052F6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		BE18DBC824C414AF001052F6 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		BE18DBCA24C42941001052F6 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		BE18DBCC24C4304A001052F6 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		BE18DBCE24C435B7001052F6 /* MealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTests.swift; sourceTree = "<group>"; };
+		BE18DBD024C45E50001052F6 /* IngredientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailView.swift; sourceTree = "<group>"; };
+		BE18DBD224C45E8C001052F6 /* IngredientDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientDetailView.xib; sourceTree = "<group>"; };
 		BE4FB63F24C32FCA00244047 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		BE4FB64124C32FD600244047 /* MealDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailView.xib; sourceTree = "<group>"; };
 		BE7AD7E924C297E100C2FDA1 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -177,7 +181,7 @@
 		BE18DBC524C3FBDD001052F6 /* Extras */ = {
 			isa = PBXGroup;
 			children = (
-				BE18DBC324C3FB6E001052F6 /* AppDelegate+Setup.swift */,
+				BE18DBC324C3FB6E001052F6 /* Appearance.swift */,
 				BE18DBC624C3FBF2001052F6 /* CustomNavigationController.swift */,
 				BE18DBC824C414AF001052F6 /* UIImage+Extensions.swift */,
 				BE18DBCA24C42941001052F6 /* PaddedLabel.swift */,
@@ -191,6 +195,8 @@
 			children = (
 				BE4FB63F24C32FCA00244047 /* MealDetailView.swift */,
 				BE4FB64124C32FD600244047 /* MealDetailView.xib */,
+				BE18DBD024C45E50001052F6 /* IngredientDetailView.swift */,
+				BE18DBD224C45E8C001052F6 /* IngredientDetailView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				BE7AD83324C30B4900C2FDA1 /* MealTableViewCell.xib in Resources */,
 				BE7AD82F24C3072200C2FDA1 /* IngredientTableViewCell.xib in Resources */,
 				BED5ADB824C1EFC0008338EE /* LaunchScreen.storyboard in Resources */,
+				BE18DBD324C45E8C001052F6 /* IngredientDetailView.xib in Resources */,
 				BED5ADB524C1EFC0008338EE /* Assets.xcassets in Resources */,
 				BE4FB64224C32FD600244047 /* MealDetailView.xib in Resources */,
 			);
@@ -608,9 +615,10 @@
 				BE7AD80C24C2C7E100C2FDA1 /* DataProvider.swift in Sources */,
 				BE7AD7F924C2A05000C2FDA1 /* Ingredient.swift in Sources */,
 				BE7AD82024C2F78100C2FDA1 /* IngredientDetailsViewController.swift in Sources */,
-				BE18DBC424C3FB6E001052F6 /* AppDelegate+Setup.swift in Sources */,
+				BE18DBC424C3FB6E001052F6 /* Appearance.swift in Sources */,
 				BE7AD82824C3007300C2FDA1 /* FavoritesViewController.swift in Sources */,
 				BE7AD7FB24C2A36700C2FDA1 /* MealDBAPIClient+Decoding.swift in Sources */,
+				BE18DBD424C46F08001052F6 /* IngredientDetailView.swift in Sources */,
 				BE7AD80224C2AB6B00C2FDA1 /* Cache.swift in Sources */,
 				BE7AD7EF24C2994100C2FDA1 /* URLSession+Mocking.swift in Sources */,
 				BE7AD7ED24C2992600C2FDA1 /* APIClient.swift in Sources */,

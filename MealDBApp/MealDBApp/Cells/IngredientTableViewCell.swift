@@ -14,9 +14,9 @@ class IngredientTableViewCell: UITableViewCell {
 	@IBOutlet weak var thumbImageView: UIImageView! {
 		didSet {
 			thumbImageView.layer.cornerRadius = 3
-			thumbImageView.backgroundColor = UIColor.red.withAlphaComponent(0.3)
-			thumbImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
-			thumbImageView.layer.borderWidth = 0.5
+			thumbImageView.backgroundColor = Colors.primary
+			thumbImageView.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+			thumbImageView.layer.borderWidth = 1
 		}
 	}
 	
@@ -39,12 +39,12 @@ class IngredientTableViewCell: UITableViewCell {
 	}
 	
 	func configureWithIngredient(_ ingredient: Ingredient) {
-		nameLabel?.text = ingredient.strIngredient
+		nameLabel?.text = ingredient.strIngredient.uppercased()
 		configureImage(ingredient)
 	}
 	
 	private func configureImage(_ ingredient: Ingredient) {
-		if let url = ingredient.smallImageUrl {
+		if let url = ingredient.getImageUrl(isThumb: true) {
 			thumbImageView.sd_setImage(with: url) { [weak self] (_, e, _, _) in
 				if e != nil {
 					self?.thumbImageView.image = UIImage(named: "ingredient-na")

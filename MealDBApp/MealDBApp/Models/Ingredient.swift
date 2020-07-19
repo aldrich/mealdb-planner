@@ -26,10 +26,12 @@ extension Ingredient {
 }
 
 extension Ingredient {
-	
-	var smallImageUrl: URL? {
-		let formatStr = "https://www.themealdb.com/images/ingredients/%@-small.png"
-		let urlString = String(format: formatStr, strIngredient)
+
+	func getImageUrl(isThumb: Bool = false) -> URL? {
+		let formatStr = "https://www.themealdb.com/images/ingredients/%@.png"
+		let ingredientStr = String(format: "%@%@", strIngredient, isThumb ? "-small" : "")
+		let urlString = String(format: formatStr, ingredientStr)
+			.lowercased()
 			.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
 		return URL(string: urlString!)
 	}

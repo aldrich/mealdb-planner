@@ -58,9 +58,6 @@ class IngredientsListViewController: UIViewController {
 					self.progressHUD = MBProgressHUD
 						.showAdded(to: (self.navigationController?.view)!,
 								   animated: true)
-				} else {
-//					self.ingredients = ingredients
-//					self.tableView.reloadData()
 				}
 			}
 			
