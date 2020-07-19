@@ -24,11 +24,8 @@ class FavoritesCoordinator: CoordinatorBase {
 	
 	override func start() {
 		let vc = FavoritesViewController()
-		// navigationController.setViewControllers([vc], animated: false)
-		
 		vc.delegate = self
 		navigationController.pushViewController(vc, animated: false)
-		
 	}
 }
 

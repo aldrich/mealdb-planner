@@ -54,6 +54,9 @@ class IngredientDetailsViewController: UIViewController {
     }
 
 	private func configureView() {
+		
+		title = ingredient.strIngredient
+		
 		view.backgroundColor = .white
 		
 		view.addSubview(tableView)

@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		appCoordinator = ApplicationCoordinator(window: window!)
 		appCoordinator.start()
 		window?.makeKeyAndVisible()
+		
+		setUpBackBarButtonItemGeneralAppearance()
 		return true
 	}
 }

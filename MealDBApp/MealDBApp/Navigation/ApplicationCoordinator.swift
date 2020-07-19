@@ -23,7 +23,7 @@ class ApplicationCoordinator: CoordinatorBase {
 	
 	private func startMainNavigation() {
 		// self.removeChildCoordinators() // seems not needed
-		let navigationController = UINavigationController()
+		let navigationController = CustomNavigationController()
 		let coordinator = SuggestedMealsCoordinator(navigationController: navigationController)
 		coordinator.delegate = self
 		
@@ -33,7 +33,7 @@ class ApplicationCoordinator: CoordinatorBase {
 	}
 	
 	private func startFavoritesModalNavigation() {
-		let navigationController = UINavigationController()
+		let navigationController = CustomNavigationController()
 		let coordinator = FavoritesCoordinator(navigationController: navigationController)
 		coordinator.delegate = self
 		

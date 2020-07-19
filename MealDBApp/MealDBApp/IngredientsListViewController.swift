@@ -66,7 +66,7 @@ class IngredientsListViewController: UIViewController {
 	private func configureView() {
 		view.backgroundColor = .white
 		
-		title = "Choose an ingredient that you have"
+		title = "Ingredients"
 		
 		view.addSubview(tableView)
 		

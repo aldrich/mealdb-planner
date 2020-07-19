@@ -23,14 +23,7 @@ class SuggestedMealsCoordinator: CoordinatorBase {
 	}
 	
 	override func start() {
-		 showIngredientsListView()
-		
-//		let meal = Meal(id: 123,
-//						name: "Kinder Joy",
-//						instructions: "Cook your egg",
-//						mealThumb: "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg")
-//
-//		showMealDetailsView(meal: meal)
+		showIngredientsListView()
 	}
 	
 	// this is the root of the navigation
@@ -54,7 +47,7 @@ class SuggestedMealsCoordinator: CoordinatorBase {
 }
 
 extension SuggestedMealsCoordinator: IngredientsListViewControllerDelegate {
-
+	
 	func shouldGoToIngredientDetailView(ingredient: Ingredient) {
 		showIngredientDetailsView(ingredient: ingredient)
 	}

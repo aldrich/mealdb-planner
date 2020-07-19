@@ -11,9 +11,7 @@ import UIKit
 protocol CoordinatorProtocol: AnyObject {
 	
 	func start()
-	// func start(coordinator: CoordinatorProtocol)
-	
-	// var navigationController: UINavigationController { get set }
+
 	var parentCoordinator: CoordinatorProtocol? { get set }
 	
 	func didFinish(coordinator: CoordinatorProtocol)
@@ -23,7 +21,7 @@ protocol CoordinatorProtocol: AnyObject {
 
 class CoordinatorBase: CoordinatorProtocol {
 	
-	var navigationController = UINavigationController()
+	var navigationController: UINavigationController = CustomNavigationController()
 	
 	var childCoordinators = [CoordinatorProtocol]()
 	

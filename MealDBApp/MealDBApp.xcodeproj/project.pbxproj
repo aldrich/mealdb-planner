@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1DE8D457F87FAB75C0969EA2 /* Pods_MealDBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3D23283E55860191E98617 /* Pods_MealDBApp.framework */; };
 		7EC1DF162BB1F898C1DDB838 /* Pods_MealDBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AE8C879175B9460A109306 /* Pods_MealDBAppTests.framework */; };
+		BE18DBC424C3FB6E001052F6 /* AppDelegate+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBC324C3FB6E001052F6 /* AppDelegate+Setup.swift */; };
+		BE18DBC724C3FBF2001052F6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBC624C3FBF2001052F6 /* CustomNavigationController.swift */; };
 		BE2B38A840508FF2A5B939AD /* Pods_MealDBApp_MealDBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9B1B5E73D12DFC663094E0 /* Pods_MealDBApp_MealDBAppUITests.framework */; };
 		BE4FB64024C32FCA00244047 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4FB63F24C32FCA00244047 /* MealDetailView.swift */; };
 		BE4FB64224C32FD600244047 /* MealDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4FB64124C32FD600244047 /* MealDetailView.xib */; };
@@ -70,6 +72,8 @@
 		2C9B1B5E73D12DFC663094E0 /* Pods_MealDBApp_MealDBAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDBApp_MealDBAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		739E1FE27FCBA65EF1A573E0 /* Pods-MealDBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDBApp.release.xcconfig"; path = "Target Support Files/Pods-MealDBApp/Pods-MealDBApp.release.xcconfig"; sourceTree = "<group>"; };
 		B1FE3F48FB5EB1B5857AE640 /* Pods-MealDBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDBAppTests.release.xcconfig"; path = "Target Support Files/Pods-MealDBAppTests/Pods-MealDBAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE18DBC324C3FB6E001052F6 /* AppDelegate+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Setup.swift"; sourceTree = "<group>"; };
+		BE18DBC624C3FBF2001052F6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		BE4FB63F24C32FCA00244047 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		BE4FB64124C32FD600244047 /* MealDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailView.xib; sourceTree = "<group>"; };
 		BE7AD7E924C297E100C2FDA1 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -160,6 +164,15 @@
 				B1FE3F48FB5EB1B5857AE640 /* Pods-MealDBAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE18DBC524C3FBDD001052F6 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				BE18DBC324C3FB6E001052F6 /* AppDelegate+Setup.swift */,
+				BE18DBC624C3FBF2001052F6 /* CustomNavigationController.swift */,
+			);
+			path = Extras;
 			sourceTree = "<group>";
 		};
 		BE4FB63E24C32F9C00244047 /* Views */ = {
@@ -285,6 +298,7 @@
 		BED5ADA724C1EFBE008338EE /* MealDBApp */ = {
 			isa = PBXGroup;
 			children = (
+				BE18DBC524C3FBDD001052F6 /* Extras */,
 				BE7AD81124C2E90200C2FDA1 /* Navigation */,
 				BE7AD7FE24C2A5F400C2FDA1 /* Storage */,
 				BE7AD7EB24C298E200C2FDA1 /* Networking */,
@@ -582,6 +596,7 @@
 				BE7AD80C24C2C7E100C2FDA1 /* DataProvider.swift in Sources */,
 				BE7AD7F924C2A05000C2FDA1 /* Ingredient.swift in Sources */,
 				BE7AD82024C2F78100C2FDA1 /* IngredientDetailsViewController.swift in Sources */,
+				BE18DBC424C3FB6E001052F6 /* AppDelegate+Setup.swift in Sources */,
 				BE7AD82824C3007300C2FDA1 /* FavoritesViewController.swift in Sources */,
 				BE7AD7FB24C2A36700C2FDA1 /* MealDBAPIClient+Decoding.swift in Sources */,
 				BE7AD80224C2AB6B00C2FDA1 /* Cache.swift in Sources */,
@@ -589,6 +604,7 @@
 				BE7AD7ED24C2992600C2FDA1 /* APIClient.swift in Sources */,
 				BE7AD82E24C3072200C2FDA1 /* IngredientTableViewCell.swift in Sources */,
 				BE7AD81E24C2F48400C2FDA1 /* IngredientsListViewController.swift in Sources */,
+				BE18DBC724C3FBF2001052F6 /* CustomNavigationController.swift in Sources */,
 				BE4FB64024C32FCA00244047 /* MealDetailView.swift in Sources */,
 				BE7AD83224C30B4900C2FDA1 /* MealTableViewCell.swift in Sources */,
 				BE7AD81524C2E92A00C2FDA1 /* CoordinatorBase.swift in Sources */,
