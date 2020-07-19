@@ -39,6 +39,7 @@ class IngredientDetailsViewController: UIViewController {
 	
 	lazy var emptyViewLabel: UILabel = {
 		let label = UILabel()
+		label.font = UIFont(name: "ChunkFive-Regular", size: 20)
 		label.text = "Sorry, no meals found."
 		view.addSubview(label)
 		label.snp.makeConstraints { make in
@@ -83,7 +84,7 @@ class IngredientDetailsViewController: UIViewController {
 		
 		ingredientDetailView.snp.makeConstraints { make in
 			make.top.leading.trailing.equalToSuperview()
-			make.height.greaterThanOrEqualTo(50)
+			// height determined internally by view
 		}
 		
 		view.addSubview(tableView)
