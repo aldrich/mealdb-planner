@@ -162,3 +162,44 @@ extension Meal {
 				  strMeasure20: measure20)
 	}
 }
+
+extension Meal {
+	
+	var ingredientsList: [String] {
+		
+		var ret = [String]()
+		
+		let add = { (measure: String?, ingredient: String?) -> Void in
+			guard let measure = measure, let ingredient = ingredient,
+				!measure.isEmpty, !ingredient.isEmpty else { return }
+			let str = String(format: "• %@ ✕ %@",
+							 measure.lowercased(),
+							 ingredient.lowercased())
+			ret.append(str)
+		}
+		
+		add(strMeasure1, strIngredient1)
+		add(strMeasure2, strIngredient2)
+		add(strMeasure3, strIngredient3)
+		add(strMeasure4, strIngredient4)
+		add(strMeasure5, strIngredient5)
+		add(strMeasure6, strIngredient6)
+		add(strMeasure7, strIngredient7)
+		add(strMeasure8, strIngredient8)
+		add(strMeasure9, strIngredient9)
+		add(strMeasure10, strIngredient10)
+		add(strMeasure11, strIngredient11)
+		add(strMeasure12, strIngredient12)
+		add(strMeasure13, strIngredient13)
+		add(strMeasure14, strIngredient14)
+		add(strMeasure15, strIngredient15)
+		add(strMeasure16, strIngredient16)
+		add(strMeasure17, strIngredient17)
+		add(strMeasure18, strIngredient18)
+		add(strMeasure19, strIngredient19)
+		add(strMeasure20, strIngredient20)
+		
+		return ret
+	}
+	
+}

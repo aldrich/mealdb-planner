@@ -44,7 +44,7 @@ class MealDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		title = meal.strMeal
-		view.backgroundColor = .white
+		view.backgroundColor = .systemBackground
         
 		fetchMealDetails()
 		setupView()
@@ -65,7 +65,6 @@ class MealDetailsViewController: UIViewController {
 	}
 
 	private func setupView() {
-		// edgesForExtendedLayout = UIRectEdge()
 		
 		view.addSubview(scrollView)
 		

@@ -12,6 +12,7 @@
 		BE18DBC424C3FB6E001052F6 /* AppDelegate+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBC324C3FB6E001052F6 /* AppDelegate+Setup.swift */; };
 		BE18DBC724C3FBF2001052F6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBC624C3FBF2001052F6 /* CustomNavigationController.swift */; };
 		BE18DBC924C414AF001052F6 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBC824C414AF001052F6 /* UIImage+Extensions.swift */; };
+		BE18DBCB24C42941001052F6 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18DBCA24C42941001052F6 /* PaddedLabel.swift */; };
 		BE2B38A840508FF2A5B939AD /* Pods_MealDBApp_MealDBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9B1B5E73D12DFC663094E0 /* Pods_MealDBApp_MealDBAppUITests.framework */; };
 		BE4FB64024C32FCA00244047 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4FB63F24C32FCA00244047 /* MealDetailView.swift */; };
 		BE4FB64224C32FD600244047 /* MealDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4FB64124C32FD600244047 /* MealDetailView.xib */; };
@@ -76,6 +77,7 @@
 		BE18DBC324C3FB6E001052F6 /* AppDelegate+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Setup.swift"; sourceTree = "<group>"; };
 		BE18DBC624C3FBF2001052F6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		BE18DBC824C414AF001052F6 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		BE18DBCA24C42941001052F6 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		BE4FB63F24C32FCA00244047 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		BE4FB64124C32FD600244047 /* MealDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailView.xib; sourceTree = "<group>"; };
 		BE7AD7E924C297E100C2FDA1 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				BE18DBC324C3FB6E001052F6 /* AppDelegate+Setup.swift */,
 				BE18DBC624C3FBF2001052F6 /* CustomNavigationController.swift */,
 				BE18DBC824C414AF001052F6 /* UIImage+Extensions.swift */,
+				BE18DBCA24C42941001052F6 /* PaddedLabel.swift */,
 			);
 			path = Extras;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				BE7AD83224C30B4900C2FDA1 /* MealTableViewCell.swift in Sources */,
 				BE7AD81524C2E92A00C2FDA1 /* CoordinatorBase.swift in Sources */,
 				BE7AD80A24C2BDDD00C2FDA1 /* Collections.swift in Sources */,
+				BE18DBCB24C42941001052F6 /* PaddedLabel.swift in Sources */,
 				BE7AD80424C2AF1100C2FDA1 /* Persistence.swift in Sources */,
 				BE7AD81C24C2F31C00C2FDA1 /* SuggestedMealsCoordinator.swift in Sources */,
 				BED5ADA924C1EFBE008338EE /* AppDelegate.swift in Sources */,

@@ -10,6 +10,8 @@
             <connections>
                 <outlet property="categoryAreaLabel" destination="neM-Bd-RRB" id="udC-Pw-bb9"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="S6d-Db-7m6"/>
+                <outlet property="ingredientsHeaderLabel" destination="xwr-Z8-2iC" id="xob-Ka-3bx"/>
+                <outlet property="ingredientsLabel" destination="mlX-x5-yuh" id="WrC-y5-hxh"/>
                 <outlet property="instructionsHeaderLabel" destination="6IG-Cm-7bt" id="t2a-ls-goZ"/>
                 <outlet property="instructionsLabel" destination="z7R-LE-IQR" id="E3W-8n-2H6"/>
                 <outlet property="mealNameLabel" destination="ULz-jh-qIy" id="f9c-Wj-EtP"/>
@@ -18,65 +20,85 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view autoresizesSubviews="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="416" height="699"/>
+            <rect key="frame" x="0.0" y="0.0" width="551" height="600"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZqA-gi-jpo">
-                    <rect key="frame" x="0.0" y="0.0" width="416" height="240"/>
+                    <rect key="frame" x="0.0" y="0.0" width="551" height="240"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="240" id="7Ab-b2-8EQ"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULz-jh-qIy" userLabel="Meal Name">
-                    <rect key="frame" x="16" y="252" width="384" height="25.5"/>
+                    <rect key="frame" x="16" y="252" width="519" height="25.5"/>
                     <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category and Area" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neM-Bd-RRB" userLabel="Category and Area">
-                    <rect key="frame" x="16" y="283.5" width="384" height="19.5"/>
+                    <rect key="frame" x="16" y="283.5" width="519" height="19.5"/>
                     <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTRUCTIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IG-Cm-7bt" userLabel="Directions Header">
-                    <rect key="frame" x="16" y="315" width="384" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTRUCTIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IG-Cm-7bt" userLabel="Directions Header" customClass="PaddedLabel" customModule="MealDBApp" customModuleProvider="target">
+                    <rect key="frame" x="16" y="379" width="519" height="16"/>
                     <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU WILL NEED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwr-Z8-2iC" userLabel="Directions Header" customClass="PaddedLabel" customModule="MealDBApp" customModuleProvider="target">
+                    <rect key="frame" x="16" y="315" width="519" height="16"/>
+                    <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Instructions Body" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7R-LE-IQR" userLabel="Directions Body">
-                    <rect key="frame" x="28" y="345" width="360" height="342"/>
+                    <rect key="frame" x="28" y="407" width="495" height="181"/>
                     <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Ingredients Body" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlX-x5-yuh" userLabel="Directions Body">
+                    <rect key="frame" x="28" y="347" width="495" height="16"/>
+                    <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="6IG-Cm-7bt" firstAttribute="top" secondItem="neM-Bd-RRB" secondAttribute="bottom" constant="12" id="2o8-Pc-alR"/>
+                <constraint firstItem="6IG-Cm-7bt" firstAttribute="top" secondItem="mlX-x5-yuh" secondAttribute="bottom" constant="16" id="18a-RV-qDK"/>
                 <constraint firstItem="ZqA-gi-jpo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EIJ-KW-GH4"/>
                 <constraint firstItem="ULz-jh-qIy" firstAttribute="top" secondItem="ZqA-gi-jpo" secondAttribute="bottom" constant="12" id="Sgt-VB-7Th"/>
                 <constraint firstItem="z7R-LE-IQR" firstAttribute="leading" secondItem="ULz-jh-qIy" secondAttribute="leading" constant="12" id="T4Q-LW-PXl"/>
+                <constraint firstItem="xwr-Z8-2iC" firstAttribute="leading" secondItem="ULz-jh-qIy" secondAttribute="leading" id="Taf-f7-YLs"/>
                 <constraint firstItem="z7R-LE-IQR" firstAttribute="trailing" secondItem="ULz-jh-qIy" secondAttribute="trailing" constant="-12" id="Upv-fJ-f1t"/>
+                <constraint firstItem="xwr-Z8-2iC" firstAttribute="top" secondItem="neM-Bd-RRB" secondAttribute="bottom" constant="12" id="VBE-Wp-XFn"/>
                 <constraint firstItem="neM-Bd-RRB" firstAttribute="top" secondItem="ULz-jh-qIy" secondAttribute="bottom" constant="6" id="WW0-EI-iT2"/>
                 <constraint firstItem="neM-Bd-RRB" firstAttribute="trailing" secondItem="ULz-jh-qIy" secondAttribute="trailing" id="Wdh-P8-ceY"/>
+                <constraint firstItem="xwr-Z8-2iC" firstAttribute="trailing" secondItem="ULz-jh-qIy" secondAttribute="trailing" id="aR7-pD-ZAC"/>
                 <constraint firstItem="6IG-Cm-7bt" firstAttribute="leading" secondItem="ULz-jh-qIy" secondAttribute="leading" id="aVx-Yr-p8B"/>
                 <constraint firstItem="6IG-Cm-7bt" firstAttribute="trailing" secondItem="ULz-jh-qIy" secondAttribute="trailing" id="b39-fg-mo7"/>
+                <constraint firstItem="mlX-x5-yuh" firstAttribute="top" secondItem="xwr-Z8-2iC" secondAttribute="bottom" constant="16" id="bEs-nx-OBR"/>
                 <constraint firstItem="ULz-jh-qIy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="dI8-TE-aAA"/>
                 <constraint firstAttribute="trailing" secondItem="ULz-jh-qIy" secondAttribute="trailing" constant="16" id="dl5-yt-DrW"/>
                 <constraint firstItem="z7R-LE-IQR" firstAttribute="top" secondItem="6IG-Cm-7bt" secondAttribute="bottom" constant="12" id="g1o-AO-Vof"/>
+                <constraint firstItem="mlX-x5-yuh" firstAttribute="trailing" secondItem="z7R-LE-IQR" secondAttribute="trailing" id="g5i-Jv-WWt"/>
                 <constraint firstAttribute="trailing" secondItem="ZqA-gi-jpo" secondAttribute="trailing" id="gRg-Vi-2SL"/>
                 <constraint firstItem="ZqA-gi-jpo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gfh-ub-wW1"/>
                 <constraint firstItem="neM-Bd-RRB" firstAttribute="leading" secondItem="ULz-jh-qIy" secondAttribute="leading" id="piT-Gj-UB6"/>
                 <constraint firstAttribute="bottom" secondItem="z7R-LE-IQR" secondAttribute="bottom" constant="12" id="rJc-cl-gog"/>
+                <constraint firstItem="mlX-x5-yuh" firstAttribute="leading" secondItem="z7R-LE-IQR" secondAttribute="leading" id="zp7-d7-eqR"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1501" y="-430"/>
+            <point key="canvasLocation" x="-1403.6231884057972" y="-463.39285714285711"/>
         </view>
     </objects>
 </document>
